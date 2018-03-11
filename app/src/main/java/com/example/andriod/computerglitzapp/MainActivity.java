@@ -1,3 +1,5 @@
+//Noras Screen
+
 package com.example.andriod.computerglitzapp;
 
 import android.content.Intent;
@@ -75,5 +77,12 @@ public class MainActivity extends AppCompatActivity {
             }
         });
     }
-
 }
+
+/*recomaendeation pathway
+trending jobs
+online quizes
+intrest quizes
+fafsa/ financal
+about
+*/

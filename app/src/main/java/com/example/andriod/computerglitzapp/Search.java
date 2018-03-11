@@ -1,3 +1,5 @@
+//Clares Screen
+
 package com.example.andriod.computerglitzapp;
 
 import android.content.Intent;

@@ -1,3 +1,5 @@
+//Ashleys Project
+
 package com.example.andriod.computerglitzapp;
 
 import android.content.Intent;
