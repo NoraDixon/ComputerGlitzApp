@@ -52,5 +52,5 @@ public class Favorites extends AppCompatActivity {
         MenuItem b = a.findItem(R.id.navigation_favorites);
         b.setChecked(true);
     }
-
+//hello
 }
