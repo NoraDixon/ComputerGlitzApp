@@ -1,5 +1,6 @@
 package com.example.andriod.computerglitzapp;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.design.widget.BottomNavigationView;
@@ -18,18 +19,24 @@ public class SchoolInfo extends AppCompatActivity {
         public boolean onNavigationItemSelected(@NonNull MenuItem item) {
             switch (item.getItemId()) {
                 case R.id.navigation_home:
-                    mTextMessage.setText(R.string.title_home);
+                    startActivity(new Intent(SchoolInfo.this, MainActivity.class));
                     return true;
-                case R.id.navigation_dashboard:
-                    mTextMessage.setText(R.string.title_dashboard);
+                case R.id.navigation_checkmark:
+                    startActivity(new Intent(SchoolInfo.this, Checklist.class));
                     return true;
-                case R.id.navigation_notifications:
-                    mTextMessage.setText(R.string.title_notifications);
+                case R.id.navigation_search:
+                    startActivity(new Intent(SchoolInfo.this, Search.class));
                     return true;
+
+                case R.id.navigation_favorites:
+                    startActivity(new Intent(SchoolInfo.this, Favorites.class));
+                    return true;
+
             }
             return false;
         }
     };
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
