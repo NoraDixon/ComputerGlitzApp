@@ -26,7 +26,10 @@
             android:label="@string/title_activity_search" />
         <activity
             android:name=".Favorites"
-            android:label="@string/title_activity_favorites"></activity>
+            android:label="@string/title_activity_favorites" />
+        <activity
+            android:name=".SchoolInfo"
+            android:label="@string/title_activity_school_info"></activity>
     </application>
 
 </manifest>
