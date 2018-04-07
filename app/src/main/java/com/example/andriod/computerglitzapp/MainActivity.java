@@ -1,3 +1,5 @@
+//Noras Screen
+
 package com.example.andriod.computerglitzapp;
 
 import android.content.Intent;
@@ -5,6 +7,7 @@ import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.design.widget.BottomNavigationView;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.TextView;
@@ -13,6 +16,8 @@ import android.widget.AdapterView;
 import android.widget.Toast;
 import android.view.View;
 import android.widget.AdapterView.OnItemClickListener;
+
+import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -74,6 +79,21 @@ public class MainActivity extends AppCompatActivity {
                 }
             }
         });
+        InitalLoader initialLoader = new InitalLoader();
+        List<CollegeData> colleges = initialLoader.LoadColleges(MainActivity.this);
+        for (int i = 0; i < colleges.size(); i++) {
+            //get the item at location "i".  This will be a college data
+            CollegeData college = colleges.get(i);
+            String name = college.getNameofCollege();
+            Log.d("name",name);
+        }
     }
-
 }
+
+/*recomaendeation pathway
+trending jobs
+online quizes
+intrest quizes
+fafsa/ financal
+about
+*/

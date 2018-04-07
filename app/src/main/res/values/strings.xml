@@ -6,4 +6,5 @@
     <string name="title_activity_checklist">Checklist</string>
     <string name="title_activity_search">Search</string>
     <string name="title_activity_favorites">Favorites</string>
+    <string name="title_activity_school_info">SchoolInfo</string>
 </resources>

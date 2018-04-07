@@ -3,6 +3,8 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/ComputerGlitzApp.iml" filepath="$PROJECT_DIR$/ComputerGlitzApp.iml" />
+      <module fileurl="file://C:\Users\norad\StudioProjects\ComputerGlitzApp\ComputerGlitzApp.iml" filepath="C:\Users\norad\StudioProjects\ComputerGlitzApp\ComputerGlitzApp.iml" />
+      <module fileurl="file://C:\Users\norad\StudioProjects\ComputerGlitzAppTest2\ComputerGlitzApp\.idea\ComputerGlitzApp.iml" filepath="C:\Users\norad\StudioProjects\ComputerGlitzAppTest2\ComputerGlitzApp\.idea\ComputerGlitzApp.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
     </modules>
   </component>
