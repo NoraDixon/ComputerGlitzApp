@@ -29,6 +29,8 @@ public class MNCollege {
     private String pcip51;
     private String pcip52;
 
+    public MNCollege() {
+    }
 
     public MNCollege(String unitid, String opeid, String opeid6, String name, String city, String state, String zip, String website, String npcurl, String costt4_A, String tuitfte, String pcip01, String pcip11, String pcip15, String pcip43, String pcip46, String pcip47, String pcip48, String pcip49, String pcip50, String pcip51, String pcip52) {
         this.unitid = unitid;

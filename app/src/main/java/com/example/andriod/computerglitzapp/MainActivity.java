@@ -45,8 +45,11 @@ public class MainActivity extends AppCompatActivity {
 
             }
             return false;
+
         }
     };
+
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -69,7 +72,7 @@ public class MainActivity extends AppCompatActivity {
                 // Toast.makeText(MainActivity.this, "" + position,
                 //  Toast.LENGTH_SHORT).show();
                 if(position == 0) {
-                    startActivity(new Intent(MainActivity.this, Favorites.class));
+                    startActivity(new Intent(MainActivity.this, SchoolInfo.class));
                 }
                 else if(position == 1) {
                     startActivity(new Intent(MainActivity.this, Checklist.class));
