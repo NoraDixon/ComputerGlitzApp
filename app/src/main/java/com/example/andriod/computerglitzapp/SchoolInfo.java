@@ -11,6 +11,9 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class SchoolInfo extends AppCompatActivity {
 
     private TextView mTextMessage;
@@ -45,11 +48,18 @@ public class SchoolInfo extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_school_info);
-        final MNCollege mnCollege=new MNCollege();
-        mnCollege.setCity("Eagan");
-        mnCollege.setName("U of Nora");
-        mnCollege.setState("MN");
-        mnCollege.setWebsite("https://www.google.com");
+
+
+        MNCollegeLoader initialLoader = new MNCollegeLoader();
+        List<MNCollege> colleges = initialLoader.loadMNColleges(SchoolInfo.this);
+        final MNCollege mnCollege=colleges.get(0);
+//        mnCollege.setCity("Eagan");
+//        mnCollege.setName("U of Nora");
+//        mnCollege.setState("MN");
+//        mnCollege.setWebsite("https://www.google.com");
+
+
+
         TextView mTextNameMessage = (TextView) findViewById(R.id.name);
         mTextNameMessage.setText(mnCollege.getName());
         TextView mTextCityMessage = (TextView) findViewById(R.id.city);
@@ -68,6 +78,15 @@ public class SchoolInfo extends AppCompatActivity {
         });
         BottomNavigationView navigation = (BottomNavigationView) findViewById(R.id.navigation);
         navigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
+
+        List<String> programList = mnCollege.getProgramList();
+       String putItAllTogether = "";
+       for (String program:programList){
+           putItAllTogether += program;
+           putItAllTogether += "\n";
+       }
+       TextView mTextProgramMessage = (TextView) findViewById(R.id.programs);
+        mTextProgramMessage.setText(putItAllTogether);
     }
 
 

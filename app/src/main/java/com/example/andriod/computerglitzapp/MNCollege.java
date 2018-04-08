@@ -1,5 +1,8 @@
 package com.example.andriod.computerglitzapp;
 
+import java.util.ArrayList;
+import java.util.List;
+
 /**
  * Created by Ashley on 4/7/2018.
  */
@@ -29,6 +32,10 @@ public class MNCollege {
     private String pcip51;
     private String pcip52;
 
+
+    private List<String> programList;
+
+
     public MNCollege() {
     }
 
@@ -55,6 +62,43 @@ public class MNCollege {
         this.pcip50 = pcip50;
         this.pcip51 = pcip51;
         this.pcip52 = pcip52;
+        List<String> programList = new ArrayList<>();
+        if(!getPcip01().equals("NULL") && Double.parseDouble(getPcip01())>0){
+            programList.add("Agriculture, Agriculture Operations, and Related Sciences");
+        }
+        if(!getPcip11().equals("NULL") && Double.parseDouble(getPcip11())>0){
+            programList.add("Computer and Information Sciences and Support Services");
+        }
+        if(!getPcip15().equals("NULL") && Double.parseDouble(getPcip15())>0){
+            programList.add("Engineering Technologies and Engineering-Related Fields");
+        }
+        if(!getPcip43().equals("NULL") && Double.parseDouble(getPcip43())>0){
+            programList.add("Homeland Security, Law Enforcement, Firefighting and Related Protective Services");
+        }
+        if(!getPcip46().equals("NULL") && Double.parseDouble(getPcip46())>0){
+            programList.add("Construction Trades");
+        }
+        if(!getPcip47().equals("NULL") && Double.parseDouble(getPcip47())>0){
+            programList.add("Mechanic and Repair Technologies/Technicians");
+        }
+        if(!getPcip48().equals("NULL") && Double.parseDouble(getPcip48())>0){
+            programList.add("Precision Production");
+        }
+        if(!getPcip49().equals("NULL") && Double.parseDouble(getPcip49())>0){
+            programList.add("Transportation and Materials Moving");
+        }
+        if(!getPcip50().equals("NULL") && Double.parseDouble(getPcip50())>0){
+            programList.add("Visual and Performing Arts");
+        }
+        if(!getPcip51().equals("NULL") && Double.parseDouble(getPcip51())>0){
+            programList.add("Health Professions and Related Programs");
+        }
+        if(!getPcip52().equals("NULL") && Double.parseDouble(getPcip52())>0){
+            programList.add("Business, Management, Marketing, and Related Support Services");
+        }
+
+
+        this.programList = programList;
     }
 
 
@@ -233,5 +277,13 @@ public class MNCollege {
 
     public void setPcip52(String pcip52) {
         this.pcip52 = pcip52;
+    }
+
+    public List<String> getProgramList() {
+        return programList;
+    }
+
+    public void setProgramList(List<String> programList) {
+        this.programList = programList;
     }
 }
