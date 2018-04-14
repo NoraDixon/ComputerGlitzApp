@@ -1,5 +1,5 @@
 UNITID,OPEID,OPEID6,INSTNM,CITY,STABBR,ZIP,INSTURL,NPCURL,COSTT4_A,TUITFTE,PCIP01,PCIP11,PCIP15,PCIP43,PCIP46,PCIP47,PCIP48,PCIP49,PCIP50,PCIP51,PCIP52
-172866,2050300,20503,Academy College,Bloomington,MN,55431-1411,www.academycollege.edu,academycollege.edu/financial-aid/other-resources,30480,17216,0,0.1042,0,0,0,0,0,0.5625,0.0417,0.0833,0.2083
+172866,2050300,20503,Academy College,Bloomington,MN,55431-1411,www.academycollege.edu,academycollege.edu/financial-aid/other-resources,30480,17216,1,1042,1,1,01,01,01,01.5625,01.0417,01.0833,01.2083
 172918,554400,5544,Alexandria Technical & Community College,Alexandria,MN,56308,www.alextech.edu,www.alextech.edu/calculator,17866,3672,0,0.0204,0.0419,0.2986,0.0215,0.0735,0.0713,0.0362,0.0305,0.2002,0.0713
 172927,2514100,25141,American Indian OIC Inc,Minneapolis,MN,55404-2221,www.aioic.org,takoda.aioic.edu/learn-more/costs-price-calculator/#.Vi5wKberTcs,NULL,39,0,0.3025,0,0,0,0,0,0,0,0.4454,0.042
 172954,735000,7350,Anoka Technical College,Anoka,MN,55303,www.anokatech.edu,www.anokatech.edu/BecomeStudent/TuitionFees/Net%20Price%20Calculator.aspx,16825,2713,0.0066,0,0.1034,0,0.0213,0.0148,0.133,0,0,0.5846,0.0624

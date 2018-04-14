@@ -29,7 +29,10 @@
             android:label="@string/title_activity_favorites" />
         <activity
             android:name=".SchoolInfo"
-            android:label="@string/title_activity_school_info"></activity>
+            android:label="@string/title_activity_school_info" />
+        <activity
+            android:name=".TrendingJobs"
+            android:label="@string/title_activity_trending_jobs"></activity>
     </application>
 
 </manifest>

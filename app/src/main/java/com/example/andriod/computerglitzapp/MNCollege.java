@@ -1,5 +1,6 @@
 package com.example.andriod.computerglitzapp;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -7,7 +8,7 @@ import java.util.List;
  * Created by Ashley on 4/7/2018.
  */
 
-public class MNCollege {
+public class MNCollege implements Serializable {
     //UNITID,OPEID,OPEID6,INSTNM,CITY,STABBR,ZIP,INSTURL,NPCURL,COSTT4_A,TUITFTE,PCIP01,PCIP11,PCIP15,PCIP43,PCIP46,PCIP47,PCIP48,PCIP49,PCIP50,PCIP51,PCIP52
     private String unitid;
     private String opeid;
@@ -47,6 +48,9 @@ public class MNCollege {
         this.city = city;
         this.state = state;
         this.zip = zip;
+        if (!website.startsWith("http://") && !website.startsWith("https://")){
+            website = "http://" + website;
+        }
         this.website = website;
         this.npcurl = npcurl;
         this.costt4_A = costt4_A;
