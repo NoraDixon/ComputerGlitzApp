@@ -41,7 +41,7 @@ public class TrendingJobsLoader {
                 TrendingJobs readableTrendingJobs = new TrendingJobs(
                         criteria[0],
                         criteria[1]);
-                TrendingJobs.add(TrendingJobs);
+                TrendingData.add( readableTrendingJobs );
 
             }
         } catch (IOException e) {
