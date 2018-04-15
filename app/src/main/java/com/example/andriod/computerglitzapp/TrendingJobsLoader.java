@@ -16,20 +16,20 @@ import java.util.List;
  */
 
 public class TrendingJobsLoader {
-    private List<TrendingJobs> trendingDatas;
+    private List<TrendingJobsData> trendingDatas;
 
-    public List<TrendingJobs> getCollegeData() {
+    public List<TrendingJobsData> getCollegeData() {
         return trendingDatas;
     }
 
-    public void setCollegeData(List<TrendingJobs> collegeData) {
+    public void setCollegeData(List<TrendingJobsData> collegeData) {
         this.trendingDatas = trendingDatas;
     }
     private static final TrendingJobsHolder holder=new TrendingJobsHolder ();
     public static TrendingJobsHolder getInstance(){return holder;}
-    public List<TrendingJobs> loadTrendingsData(Context contextScreen){
+    public List<TrendingJobsData> loadTrendingJobsData(Context contextScreen){
         AssetManager assetManager = contextScreen.getAssets();
-        List<TrendingJobs> TrendingData = new ArrayList<>();
+        List<TrendingJobsData> TrendingJobsData = new ArrayList<>();
 
         try {
             InputStream inputStream = assetManager.open("TrendingData.csv");
@@ -38,16 +38,16 @@ public class TrendingJobsLoader {
             List<String[]>bunchOfLists = csvReader.readAll();
             for(int n=1; n<bunchOfLists.size(); n++){
                 String[] criteria = bunchOfLists.get(n);
-                TrendingJobs readableTrendingJobs = new TrendingJobs(
+                TrendingJobs readableTrendingJobsData = new TrendingJobs(
                         criteria[0],
                         criteria[1]);
-                TrendingData.add( readableTrendingJobs );
+                TrendingJobsDataData.add( readableTrendingJobsData );
 
             }
         } catch (IOException e) {
             e.printStackTrace();
         }
-        return TrendingData;
+        return TrendingJobsData;
 
     }
 }
