@@ -96,20 +96,22 @@ public class SchoolInfo extends AppCompatActivity {
         mTextProgramMessage.setText(putItAllTogether);
     }
 
-    public void generateNoteOnSD(Context context, String sFileName, String sBody) {
-        try {
-            File root = new File(Environment.getExternalStorageDirectory(), "Notes");
-            if (!root.exists()) {
-                root.mkdirs();
-            }
-            File gpxfile = new File(root, sFileName);
+    public void wrtieFileOnInternalStorage(Context mcoContext,String sFileName, String sBody){
+        File file = new File(mcoContext.getFilesDir(),"mydir");
+        if(!file.exists()){
+            file.mkdir();
+        }
+
+        try{
+            File gpxfile = new File(file, sFileName);
             FileWriter writer = new FileWriter(gpxfile);
             writer.append(sBody);
             writer.flush();
             writer.close();
-            Toast.makeText(context, "Saved", Toast.LENGTH_SHORT).show();
-        } catch (IOException e) {
+
+        }catch (Exception e){
             e.printStackTrace();
+
         }
     }
 

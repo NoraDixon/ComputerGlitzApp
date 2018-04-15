@@ -50,8 +50,6 @@ public class TrendingJobs extends AppCompatActivity {
         }
     };
 
-    public TrendingJobs(String criterion, String criterion1) {
-    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
