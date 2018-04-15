@@ -70,7 +70,7 @@ public class TrendingJobs extends AppCompatActivity {
             row++;
             if (row==0) {
                 TextView mJob1 = (TextView) findViewById(R.id.Job1);
-                mJob1.setText(TrendingJobsData.getJob());
+                mJob1.setText(trendingJobsDataList.getJob());
             }
             }
         }
