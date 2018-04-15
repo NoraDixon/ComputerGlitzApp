@@ -56,18 +56,22 @@ public class TrendingJobs extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
 
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_trending_jobs);
-
-        TrendingJobsHolder initialLoader = new TrendingJobsHolder();
-        List<TrendingJobsData> trendingJobsDataList = initialLoader.loadTrendingJobsData(TrendingJobs.this);
-        final TrendingJobsData trendingJobsDataList=trendingJobsDataList.get(0);
-
-        TextView mJob1 = (TextView) findViewById(R.id.job1);
-        mJob1.setText(TrendingJobsData.getJob());
-
         BottomNavigationView navigation = (BottomNavigationView) findViewById(R.id.navigation);
         navigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
-    }
 
-}
+
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_trending_jobs);
+        int row = 0;
+        while (row<46) {
+            TrendingJobsLoader initialLoader = new TrendingJobsLoader();
+            List<TrendingJobsData> Jobs = initialLoader.loadTrendingJobsData(TrendingJobs.this);
+            final TrendingJobsData trendingJobsDataList = Jobs.get(row);
+            row++;
+            if (row==0) {
+                TextView mJob1 = (TextView) findViewById(R.id.Job1);
+                mJob1.setText(TrendingJobsData.getJob());
+            }
+            }
+        }
+    }

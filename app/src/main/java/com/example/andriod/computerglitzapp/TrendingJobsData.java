@@ -1,16 +1,21 @@
 package com.example.andriod.computerglitzapp;
 
+import java.io.Serializable;
+import java.util.ArrayList;
+import java.util.List;
+
 /**
  * Created by norad on 4/14/2018.
  */
 
-public class TrendingJobsData {
+public class TrendingJobsData implements Serializable {
     private String Job;
     private String Pay;
 
     public String getJob() {
         return Job;
     }
+
     public void setJob(String job) {
         Job = job;
     }
@@ -18,6 +23,7 @@ public class TrendingJobsData {
     public String getPay() {
         return Pay;
     }
+
     public void setPay(String pay) {
         Pay = pay;
     }
@@ -26,8 +32,4 @@ public class TrendingJobsData {
         Job = job;
         Pay = pay;
     }
-
-
-
-
 }
