@@ -50,7 +50,7 @@ public class ImageAdapter extends BaseAdapter {
     // references to our images
     private Integer[] mThumbIds = {
             R.drawable.ic_dashboard_black_24dp,
-            R.drawable.ic_launcher_background,
+            R.drawable.ic_notifications_black_24dp,
 
     };
 }

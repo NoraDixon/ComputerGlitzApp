@@ -20,10 +20,6 @@ import java.util.List;
 
 public class TrendingJobs extends AppCompatActivity {
 
-    private TextView mTextMessage;
-
-
-
     private BottomNavigationView.OnNavigationItemSelectedListener mOnNavigationItemSelectedListener
             = new BottomNavigationView.OnNavigationItemSelectedListener() {
 
@@ -54,10 +50,6 @@ public class TrendingJobs extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
 
-        BottomNavigationView navigation = (BottomNavigationView) findViewById(R.id.navigation);
-        navigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
-
-
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_trending_jobs);
         int row = 0;
@@ -65,11 +57,14 @@ public class TrendingJobs extends AppCompatActivity {
             TrendingJobsLoader initialLoader = new TrendingJobsLoader();
             List<TrendingJobsData> Jobs = initialLoader.loadTrendingJobsData(TrendingJobs.this);
             final TrendingJobsData trendingJobsDataList = Jobs.get(row);
-            row++;
             if (row==0) {
                 TextView mJob1 = (TextView) findViewById(R.id.Job1);
                 mJob1.setText(trendingJobsDataList.getJob());
             }
+            row++;
             }
+
+        BottomNavigationView navigation = (BottomNavigationView) findViewById(R.id.navigation);
+        navigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
         }
     }
