@@ -18,4 +18,5 @@ public class TrendingJobsHolder {
     }
     private static final TrendingJobsHolder holder=new TrendingJobsHolder ();
     public static TrendingJobsHolder getInstance(){return holder;}
+
 }

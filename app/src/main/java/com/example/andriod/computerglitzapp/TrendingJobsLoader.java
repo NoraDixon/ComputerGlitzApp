@@ -29,7 +29,7 @@ public class TrendingJobsLoader {
     public static TrendingJobsHolder getInstance(){return holder;}
     public List<TrendingJobsData> loadTrendingJobsData(Context contextScreen){
         AssetManager assetManager = contextScreen.getAssets();
-        List<TrendingJobsData> TrendingJobsData = new ArrayList<>();
+        List<TrendingJobsData> myTrendingJobDataList  = new ArrayList<>();
 
         try {
             InputStream inputStream = assetManager.open("TrendingData.csv");
@@ -38,16 +38,17 @@ public class TrendingJobsLoader {
             List<String[]>bunchOfLists = csvReader.readAll();
             for(int n=1; n<bunchOfLists.size(); n++){
                 String[] criteria = bunchOfLists.get(n);
-                TrendingJobs readableTrendingJobsData = new TrendingJobs(
+                TrendingJobsData readableTrendingJobsData = new TrendingJobsData(
                         criteria[0],
                         criteria[1]);
-                TrendingJobsDataData.add( readableTrendingJobsData );
+                myTrendingJobDataList.add( readableTrendingJobsData );
+
 
             }
         } catch (IOException e) {
             e.printStackTrace();
         }
-        return TrendingJobsData;
+        return myTrendingJobDataList;
 
     }
 }
