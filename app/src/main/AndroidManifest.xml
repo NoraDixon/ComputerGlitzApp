@@ -33,6 +33,9 @@
         <activity
             android:name=".CollegeListActivity"
             android:label="CollegeListActivity"></activity>
+        <activity
+            android:name=".IndividsualChecklist"
+            android:label="IndividsualChecklist"></activity>
     </application>
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />

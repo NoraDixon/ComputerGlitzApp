@@ -124,9 +124,9 @@ public class SchoolInfo extends AppCompatActivity {
         });
 
         //when button clicked
-        final Intent collegeView = new Intent(SchoolInfo.this, IndividsualChecklist.class);
-        collegeView.putExtra("CollegeSelected", mnCollege); //this
-        startActivity(collegeView); //this
+//        final Intent collegeView = new Intent(SchoolInfo.this, IndividsualChecklist.class);
+//        collegeView.putExtra("CollegeSelected", mnCollege); //this
+//        startActivity(collegeView); //this
     }
 
 

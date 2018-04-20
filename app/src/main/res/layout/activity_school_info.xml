@@ -90,6 +90,8 @@
             android:text="City Name"
             android:textColor="@color/black"
             android:textSize="20dp"
+            app:layout_constraintLeft_toRightOf="@id/CityLabel"
+            app:layout_constraintStart_toStartOf="@id/name"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
