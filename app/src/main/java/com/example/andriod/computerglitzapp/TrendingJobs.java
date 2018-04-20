@@ -39,7 +39,7 @@ public class TrendingJobs extends AppCompatActivity {
                     startActivity(new Intent(TrendingJobs.this, Checklist.class));
                     return true;
                 case R.id.navigation_search:
-                    startActivity(new Intent(TrendingJobs.this, Search.class));
+                    startActivity(new Intent(TrendingJobs.this, CollegeListActivity.class));
                     return true;
 
                 case R.id.navigation_favorites:

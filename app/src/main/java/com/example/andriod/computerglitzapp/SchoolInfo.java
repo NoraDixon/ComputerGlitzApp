@@ -42,7 +42,7 @@ public class SchoolInfo extends AppCompatActivity {
                     startActivity(new Intent(SchoolInfo.this, Checklist.class));
                     return true;
                 case R.id.navigation_search:
-                    startActivity(new Intent(SchoolInfo.this, Search.class));
+                    startActivity(new Intent(SchoolInfo.this, CollegeListActivity.class));
                     return true;
 
                 case R.id.navigation_favorites:

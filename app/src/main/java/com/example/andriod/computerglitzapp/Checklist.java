@@ -29,7 +29,7 @@ public class Checklist extends AppCompatActivity {
                     startActivity(new Intent(Checklist.this, Checklist.class));
                     return true;
                 case R.id.navigation_search:
-                    startActivity(new Intent(Checklist.this, Search.class));
+                    startActivity(new Intent(Checklist.this, CollegeListActivity.class));
                     return true;
 
                 case R.id.navigation_favorites:

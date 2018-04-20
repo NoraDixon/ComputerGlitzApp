@@ -78,7 +78,7 @@ public class MainActivity extends AppCompatActivity {
                     startActivity(new Intent(MainActivity.this, TrendingJobs.class));
                 }
                 else if(position == 2) {
-                    startActivity(new Intent(MainActivity.this, Search.class));
+                    startActivity(new Intent(MainActivity.this, CollegeListActivity.class));
                 }
             }
         });
