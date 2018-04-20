@@ -36,7 +36,7 @@ public class MainActivity extends AppCompatActivity {
                     startActivity(new Intent(MainActivity.this, Checklist.class));
                     return true;
                 case R.id.navigation_search:
-                    startActivity(new Intent(MainActivity.this, Search.class));
+                    startActivity(new Intent(MainActivity.this, CollegeListActivity.class));
                     return true;
 
                 case R.id.navigation_favorites:
