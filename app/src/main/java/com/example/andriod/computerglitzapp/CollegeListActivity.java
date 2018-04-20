@@ -48,7 +48,7 @@ public class CollegeListActivity extends AppCompatActivity
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_checklist);
+        setContentView(R.layout.activity_college_list);
         mRecycler = (RecyclerView) findViewById(R.id.reclycler);
         mAdapter = new CollegeListItemAdapter();
         mRecycler.setAdapter(mAdapter);

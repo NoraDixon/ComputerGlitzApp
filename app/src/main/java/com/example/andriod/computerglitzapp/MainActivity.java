@@ -82,13 +82,10 @@ public class MainActivity extends AppCompatActivity {
                 }
             }
         });
-//        InitalLoader initialLoader = new InitalLoader();
-//        List<CollegeData> colleges = initialLoader.LoadColleges(MainActivity.this);
-//        for (int i = 0; i < colleges.size(); i++) {
-//            //get the item at location "i".  This will be a college data
-//            CollegeData college = colleges.get(i);
-//            String name = college.getNameofCollege();
-//            Log.d("glitz","name"+name);
+                MNCollegeLoader mnCollegeLoader=new MNCollegeLoader();
+                List<MNCollege> collegeList = mnCollegeLoader.loadMNColleges(getApplicationContext());
+                MNCollegeDataHolder mnCollegeDataHolder = MNCollegeDataHolder.getInstance();
+                mnCollegeDataHolder.setCollegeData(collegeList);
 //        }
     }
 }
