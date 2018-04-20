@@ -26,12 +26,12 @@ public class CollegeListItemAdapter extends RecyclerView.Adapter<CollegeListItem
     }
     @Override
     public void onBindViewHolder(MyViewHolder holder, int position) {
-        MNCollege item = MNCollegeDataHolder.getInstance().getCollegeData().get(position);
+        MNCollege item = MNCollegeDataHolder.getInstance().getFilteredCollegeData().get(position);
         holder.collegeNameText.setText(item.getName());
 
     }
     @Override
     public int getItemCount() {
-        return MNCollegeDataHolder.getInstance().getCollegeData().size();
+        return MNCollegeDataHolder.getInstance().getFilteredCollegeData().size();
     }
 }
