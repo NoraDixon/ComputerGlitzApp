@@ -32,7 +32,7 @@
             android:label="@string/title_activity_trending_jobs"></activity>
         <activity
             android:name=".CollegeListActivity"
-            android:label="CollegeListActivity"></activity>
+            android:label="Search"></activity>
         <activity
             android:name=".IndividsualChecklist"
             android:label="IndividsualChecklist"></activity>
