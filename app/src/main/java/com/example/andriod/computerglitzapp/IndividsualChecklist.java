@@ -44,6 +44,8 @@ public class IndividsualChecklist extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_individual_checklist);
+        final MNCollege mnCollege = (MNCollege)getIntent().getSerializableExtra("CollegeSelected");
+
         mRecycler = (RecyclerView) findViewById(R.id.reclycler);
         mAdapter = new IndividualChecklistAdapter();
         mRecycler.setAdapter(mAdapter);

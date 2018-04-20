@@ -60,11 +60,12 @@ public class SchoolInfo extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_school_info);
+        final MNCollege mnCollege = (MNCollege)getIntent().getSerializableExtra("CollegeSelected");
 
 
-        MNCollegeLoader initialLoader = new MNCollegeLoader();
-        List<MNCollege> colleges = initialLoader.loadMNColleges(SchoolInfo.this);
-        final MNCollege mnCollege=colleges.get(0);
+//        MNCollegeLoader initialLoader = new MNCollegeLoader();
+//        List<MNCollege> colleges = initialLoader.loadMNColleges(SchoolInfo.this);
+//        final MNCollege mnCollege=colleges.get(0);
 //        mnCollege.setCity("Eagan");
 //        mnCollege.setName("U of Nora");
 //        mnCollege.setState("MN");
@@ -122,6 +123,10 @@ public class SchoolInfo extends AppCompatActivity {
             }
         });
 
+        //when button clicked
+//        final Intent collegeView = new Intent(SchoolInfo.this, IndividsualChecklist.class);
+//        collegeView.putExtra("CollegeSelected", mnCollege); //this
+//        startActivity(collegeView); //this
     }
 
 
