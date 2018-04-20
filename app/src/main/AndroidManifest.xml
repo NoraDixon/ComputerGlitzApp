@@ -33,6 +33,9 @@
         <activity
             android:name=".TrendingJobs"
             android:label="@string/title_activity_trending_jobs"></activity>
+        <activity
+            android:name=".CollegeListActivity"
+            android:label="CollegeListActivity"></activity>
     </application>
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
