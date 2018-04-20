@@ -50,15 +50,15 @@ public class CollegeListActivity extends AppCompatActivity
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_college_list);
-        final Intent collegeView = new Intent(CollegeListActivity.this, MainActivity.class);
+        final Intent collegeView = new Intent(CollegeListActivity.this, SchoolInfo.class); //this
         mRecycler = (RecyclerView) findViewById(R.id.reclycler);
         mAdapter = new CollegeListItemAdapter();
         mRecycler.setAdapter(mAdapter);
         mRecycler.addOnItemTouchListener(new RecycleOnClickListener(getBaseContext(), new RecycleOnClickListener.OnItemClickListener() {
             @Override
             public void onItemClick(View view, int position) {
-                collegeView.putExtra("CollegeSelected", MNCollegeDataHolder.getInstance().getCollegeData().get(position));
-                startActivity(collegeView);
+                collegeView.putExtra("CollegeSelected", MNCollegeDataHolder.getInstance().getCollegeData().get(position)); //this
+                startActivity(collegeView); //this
 
             }
         }));

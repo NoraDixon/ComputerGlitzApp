@@ -90,7 +90,6 @@ UNITID,OPEID,OPEID6,INSTNM,CITY,STABBR,ZIP,INSTURL,NPCURL,COSTT4_A,TUITFTE,PCIP0
 445221,1049002,10490,Regency Beauty Institute-Maplewood,Maplewood,MN,55109,www.regency.edu,www.regency.edu/institute/financial-aid/calculator/,NULL,8739,0,0,0,0,0,0,0,0,0,0,0
 174765,1049001,10490,Regency Beauty Institute-St Cloud,Waite Park,MN,56387,www.regency.edu,www.regency.edu/institute/financial-aid/calculator/,NULL,8847,0,0,0,0,0,0,0,0,0,0,0
 175236,525200,5252,Ridgewater College,Willmar,MN,56201,www.ridgewater.edu,www.mnscu.edu/admissions/calculator/ridgewater.html,15822,3577,0.1147,0.0078,0.0729,0.0087,0.0243,0.0292,0.0418,0,0.0224,0.3013,0.0739
-17523601,525201,5252,Ridgewater College,Hutchinson,MN,55350,www.ridgewater.edu,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL
 173063,233500,2335,Riverland Community College,Austin,MN,55912-1473,www.riverland.edu,www.riverland.edu/fa/calculator.cfm,13770,3366,0.0051,0.0319,0.0077,0.0255,0.037,0.0383,0.0345,0.0268,0.0026,0.3129,0.152
 174738,237300,2373,Rochester Community and Technical College,Rochester,MN,55904-4999,www.rctc.edu/,www.mnscu.edu/admissions/calculator/rochester.html,18730,3250,0.0128,0.006,0.0119,0.0332,0.0443,0.0111,0.0247,0,0.023,0.3981,0.0665
 461546,4174400,41744,Rochester School of Hair Design,Rochester,MN,55901-4310,www.rochesterschoolofhairdesign.com,www.rochesterschoolofhairdesign.com,NULL,12152,0,0,0,0,0,0,0,0,0,0,0
