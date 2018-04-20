@@ -62,7 +62,7 @@ public class TrendingJobs extends AppCompatActivity {
         mRecyclerView.setHasFixedSize(true);
         mLayoutManager = new LinearLayoutManager(this);
         mRecyclerView.setLayoutManager(mLayoutManager);
-        mAdapter = new MyAdapter(myDataset);
+      //  mAdapter = new MyAdapter(myDataset);
         mRecyclerView.setAdapter(mAdapter);
 
         int row = 0;
@@ -73,8 +73,8 @@ public class TrendingJobs extends AppCompatActivity {
             final TrendingJobsData trendingJobsDataList = Jobs.get(row);
             // final TrendingJobsData trendingJobsDataList = Pay.get(row);
             if (row == 0) {
-                TextView mJob1 = (TextView) findViewById(R.id.Job1);
-                mJob1.setText(trendingJobsDataList.getJob());
+               // TextView mJob1 = (TextView) findViewById(R.id.Job1);
+                //mJob1.setText(trendingJobsDataList.getJob());
             }
             row++;
         }
