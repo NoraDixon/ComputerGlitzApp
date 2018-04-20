@@ -28,7 +28,7 @@ public class Favorites extends AppCompatActivity {
                     startActivity(new Intent(Favorites.this, Checklist.class));
                     return true;
                 case R.id.navigation_search:
-                    startActivity(new Intent(Favorites.this, Search.class));
+                    startActivity(new Intent(Favorites.this, CollegeListActivity.class));
                     return true;
 
                 case R.id.navigation_favorites:

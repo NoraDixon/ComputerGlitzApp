@@ -8,6 +8,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.RecyclerView;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
 
 /**
  * Created by Ashley on 4/20/2018.
@@ -49,13 +50,22 @@ public class CollegeListActivity extends AppCompatActivity
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_college_list);
+        final Intent collegeView = new Intent(CollegeListActivity.this, MainActivity.class);
         mRecycler = (RecyclerView) findViewById(R.id.reclycler);
         mAdapter = new CollegeListItemAdapter();
         mRecycler.setAdapter(mAdapter);
+        mRecycler.addOnItemTouchListener(new RecycleOnClickListener(getBaseContext(), new RecycleOnClickListener.OnItemClickListener() {
+            @Override
+            public void onItemClick(View view, int position) {
+                collegeView.putExtra("CollegeSelected", MNCollegeDataHolder.getInstance().getCollegeData().get(position));
+                startActivity(collegeView);
+
+            }
+        }));
         BottomNavigationView navigation = findViewById(R.id.navigation);
         navigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
         Menu a = navigation.getMenu();
-        MenuItem b = a.findItem(R.id.navigation_checkmark);
+        MenuItem b = a.findItem(R.id.navigation_search);
         b.setChecked(true);
     }
 

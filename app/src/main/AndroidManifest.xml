@@ -22,9 +22,6 @@
             android:name=".Checklist"
             android:label="@string/title_activity_checklist" />
         <activity
-            android:name=".Search"
-            android:label="@string/title_activity_search" />
-        <activity
             android:name=".Favorites"
             android:label="@string/title_activity_favorites" />
         <activity
