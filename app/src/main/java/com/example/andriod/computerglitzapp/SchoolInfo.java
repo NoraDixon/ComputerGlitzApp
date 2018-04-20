@@ -11,6 +11,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -47,6 +48,7 @@ public class SchoolInfo extends AppCompatActivity {
 
             }
             return false;
+
         }
     };
 
@@ -94,26 +96,30 @@ public class SchoolInfo extends AppCompatActivity {
        }
        TextView mTextProgramMessage = (TextView) findViewById(R.id.programs);
         mTextProgramMessage.setText(putItAllTogether);
+        String collegeNotes = new String();
+        EditText collegeNotesView = (EditText) findViewById(R.id.editText);
+        collegeNotes = collegeNotesView.getText().toString();
+
     }
 
-//    public void wrtieFileOnInternalStorage(Context mcoContext,String sFileName, String sBody){
-//        File file = new File(mcoContext.getFilesDir(),"mydir");
-//        if(!file.exists()){
-//            file.mkdir();
-//        }
-//
-//        try{
-//            File gpxfile = new File(file, sFileName);
-//            FileWriter writer = new FileWriter(gpxfile);
-//            writer.append(sBody);
-//            writer.flush();
-//            writer.close();
-//
-//        }catch (Exception e){
-//            e.printStackTrace();
-//
-//        }
-//    }
+    public void SaveNotes (Context mcoContext,String sFileName, String sBody){
+        File file = new File(mcoContext.getFilesDir(),"mydir");
+        if(!file.exists()){
+            file.mkdir();
+        }
+
+        try{
+            File gpxfile = new File(file, sFileName);
+            FileWriter writer = new FileWriter(gpxfile);
+            writer.append(sBody);
+            writer.flush();
+            writer.close();
+
+        }catch (Exception e){
+            e.printStackTrace();
+
+        }
+    }
 
 
 }
