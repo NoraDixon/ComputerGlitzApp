@@ -96,24 +96,24 @@ public class SchoolInfo extends AppCompatActivity {
         mTextProgramMessage.setText(putItAllTogether);
     }
 
-    public void wrtieFileOnInternalStorage(Context mcoContext,String sFileName, String sBody){
-        File file = new File(mcoContext.getFilesDir(),"mydir");
-        if(!file.exists()){
-            file.mkdir();
-        }
-
-        try{
-            File gpxfile = new File(file, sFileName);
-            FileWriter writer = new FileWriter(gpxfile);
-            writer.append(sBody);
-            writer.flush();
-            writer.close();
-
-        }catch (Exception e){
-            e.printStackTrace();
-
-        }
-    }
+//    public void wrtieFileOnInternalStorage(Context mcoContext,String sFileName, String sBody){
+//        File file = new File(mcoContext.getFilesDir(),"mydir");
+//        if(!file.exists()){
+//            file.mkdir();
+//        }
+//
+//        try{
+//            File gpxfile = new File(file, sFileName);
+//            FileWriter writer = new FileWriter(gpxfile);
+//            writer.append(sBody);
+//            writer.flush();
+//            writer.close();
+//
+//        }catch (Exception e){
+//            e.printStackTrace();
+//
+//        }
+//    }
 
 
 }

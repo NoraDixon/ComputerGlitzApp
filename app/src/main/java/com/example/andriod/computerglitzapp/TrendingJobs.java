@@ -64,7 +64,9 @@ public class TrendingJobs extends AppCompatActivity {
         mRecyclerView.setLayoutManager(mLayoutManager);
         TrendingJobsLoader initialLoader = new TrendingJobsLoader();
         List<TrendingJobsData> Jobs = initialLoader.loadTrendingJobsData(TrendingJobs.this);
-        mAdapter = new MyAdapter(Jobs);
+        TrendingJobsHolder goodHolder = TrendingJobsHolder.getInstance();
+        goodHolder.setTrendingDatas(Jobs);
+        mAdapter = new TrendingJobsAdapter();
         mRecyclerView.setAdapter(mAdapter);
 
 //        int row = 0;

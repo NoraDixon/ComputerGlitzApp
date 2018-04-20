@@ -7,13 +7,13 @@ import java.util.List;
  */
 
 public class TrendingJobsHolder {
-    private List<TrendingJobs> trendingDatas;
+    private List<TrendingJobsData> trendingDatas;
 
-    public List<TrendingJobs> getTrendingDatas() {
+    public List<TrendingJobsData> getTrendingDatas() {
         return trendingDatas;
     }
 
-    public void setCollegeData(List<MNCollege> collegeData) {
+    public void setTrendingDatas(List<TrendingJobsData> trendingDatas) {
         this.trendingDatas = trendingDatas;
     }
     private static final TrendingJobsHolder holder=new TrendingJobsHolder ();
