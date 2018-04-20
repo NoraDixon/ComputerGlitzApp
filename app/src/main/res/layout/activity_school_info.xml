@@ -148,6 +148,26 @@
             android:textSize="20dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@id/programs"
+            >
+            <EditText
+                android:id="@+id/editText"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="16dp"
+                android:paddingTop="25dp"
+                android:layout_marginTop="416dp"
+                android:ems="10"
+                android:inputType="textMultiLine"
+                android:paddingBottom="100dp"
+                android:hint="Type Notes About Schools"
+
+                />
+        </LinearLayout>
 
     </android.support.constraint.ConstraintLayout>
 </ScrollView>
