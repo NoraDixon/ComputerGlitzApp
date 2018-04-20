@@ -62,22 +62,24 @@ public class TrendingJobs extends AppCompatActivity {
         mRecyclerView.setHasFixedSize(true);
         mLayoutManager = new LinearLayoutManager(this);
         mRecyclerView.setLayoutManager(mLayoutManager);
-        mAdapter = new MyAdapter(myDataset);
+        TrendingJobsLoader initialLoader = new TrendingJobsLoader();
+        List<TrendingJobsData> Jobs = initialLoader.loadTrendingJobsData(TrendingJobs.this);
+        mAdapter = new MyAdapter(Jobs);
         mRecyclerView.setAdapter(mAdapter);
 
-        int row = 0;
-        while (row < 46) {
-            TrendingJobsLoader initialLoader = new TrendingJobsLoader();
-            List<TrendingJobsData> Jobs = initialLoader.loadTrendingJobsData(TrendingJobs.this);
-            List<TrendingJobsData> Pay = initialLoader.loadTrendingJobsData(TrendingJobs.this);
-            final TrendingJobsData trendingJobsDataList = Jobs.get(row);
-            // final TrendingJobsData trendingJobsDataList = Pay.get(row);
-            if (row == 0) {
-                TextView mJob1 = (TextView) findViewById(R.id.Job1);
-                mJob1.setText(trendingJobsDataList.getJob());
-            }
-            row++;
-        }
+//        int row = 0;
+//        while (row < 46) {
+//            TrendingJobsLoader initialLoader = new TrendingJobsLoader();
+//            List<TrendingJobsData> Jobs = initialLoader.loadTrendingJobsData(TrendingJobs.this);
+//            //List<TrendingJobsData> Pay = initialLoader.loadTrendingJobsData(TrendingJobs.this);
+//            final TrendingJobsData trendingJobsDataList = Jobs.get(row);
+//            // final TrendingJobsData trendingJobsDataList = Pay.get(row);
+//            if (row == 0) {
+//                TextView mJob1 = (TextView) findViewById(R.id.Job1);
+//                mJob1.setText(trendingJobsDataList.getJob());
+//            }
+//            row++;
+//        }
 
         BottomNavigationView navigation = (BottomNavigationView) findViewById(R.id.navigation);
         navigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
