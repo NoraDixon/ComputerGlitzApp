@@ -17,6 +17,7 @@ import android.widget.Toast;
 import android.view.View;
 import android.widget.AdapterView.OnItemClickListener;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
@@ -86,6 +87,8 @@ public class MainActivity extends AppCompatActivity {
                 List<MNCollege> collegeList = mnCollegeLoader.loadMNColleges(getApplicationContext());
                 MNCollegeDataHolder mnCollegeDataHolder = MNCollegeDataHolder.getInstance();
                 mnCollegeDataHolder.setCollegeData(collegeList);
+                FavoritesDataHolder favoritesDataHolder = FavoritesDataHolder.getInstance();
+                favoritesDataHolder.setCollegeData(new ArrayList<MNCollege>());
 //        }
     }
 }

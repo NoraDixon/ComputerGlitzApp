@@ -11,10 +11,12 @@ import android.support.design.widget.BottomNavigationView;
 import android.support.v7.app.AppCompatActivity;
 import android.text.Editable;
 import android.text.TextWatcher;
+import android.text.style.ClickableSpan;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageButton;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -23,7 +25,11 @@ import java.io.FileWriter;
 import java.io.IOException;
 import java.io.Serializable;
 import java.util.ArrayList;
+import java.util.Collection;
+import java.util.HashSet;
+import java.util.Iterator;
 import java.util.List;
+import java.util.Set;
 
 public class SchoolInfo extends AppCompatActivity {
 
@@ -62,17 +68,6 @@ public class SchoolInfo extends AppCompatActivity {
         setContentView(R.layout.activity_school_info);
         final MNCollege mnCollege = (MNCollege)getIntent().getSerializableExtra("CollegeSelected");
 
-
-//        MNCollegeLoader initialLoader = new MNCollegeLoader();
-//        List<MNCollege> colleges = initialLoader.loadMNColleges(SchoolInfo.this);
-//        final MNCollege mnCollege=colleges.get(0);
-//        mnCollege.setCity("Eagan");
-//        mnCollege.setName("U of Nora");
-//        mnCollege.setState("MN");
-//        mnCollege.setWebsite("https://www.google.com");
-
-
-
         TextView mTextNameMessage = (TextView) findViewById(R.id.name);
         mTextNameMessage.setText(mnCollege.getName());
         TextView mTextCityMessage = (TextView) findViewById(R.id.city);
@@ -87,8 +82,40 @@ public class SchoolInfo extends AppCompatActivity {
                 Intent browserIntent = new Intent(Intent.ACTION_VIEW, Uri.parse(mnCollege.getWebsite()));
                 startActivity(browserIntent);
             }
-
         });
+        final ImageButton checkButton = findViewById(R.id.check);
+        checkButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                final Intent collegeView = new Intent(SchoolInfo.this, IndividsualChecklist.class);
+                collegeView.putExtra("CollegeSelected", mnCollege);
+                startActivity(collegeView);
+            }
+        });
+
+        final ImageButton heartButton = findViewById(R.id.heart);
+        Set<String> favoritesCheck = retriveStringSetByID("favoritesList");
+        if (favoritesCheck.contains(mnCollege.getUnitid())){
+            heartButton.setImageResource(R.drawable.ic_favorite_black_24dp);
+            heartButton.setTag("1");
+        }
+        heartButton.setOnClickListener (new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if (heartButton.getTag().equals("0")) {
+                    heartButton.setImageResource(R.drawable.ic_favorite_black_24dp);
+                    heartButton.setTag("1");
+                    favoritesSave(mnCollege.getUnitid(), true);
+                }
+                else if (heartButton.getTag().equals("1")) {
+                    heartButton.setImageResource(R.drawable.ic_favorite_border_black_24dp);
+                    heartButton.setTag("0");
+                    favoritesSave(mnCollege.getUnitid(), false);
+                }
+            }
+        });
+        final ImageButton calendarButton = findViewById(R.id.calendar);
+
         BottomNavigationView navigation = (BottomNavigationView) findViewById(R.id.navigation);
         navigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
 
@@ -123,7 +150,6 @@ public class SchoolInfo extends AppCompatActivity {
             }
         });
 
-        //when button clicked
 //        final Intent collegeView = new Intent(SchoolInfo.this, IndividsualChecklist.class);
 //        collegeView.putExtra("CollegeSelected", mnCollege); //this
 //        startActivity(collegeView); //this
@@ -142,5 +168,24 @@ public class SchoolInfo extends AppCompatActivity {
         SharedPreferences sharedPreferences = getSharedPreferences(SchoolInfoVaribles.sharedPrefrencesFile, Context.MODE_PRIVATE);
         return sharedPreferences.getString(id, "");
     }
+
+    public Set<String> retriveStringSetByID (String id){
+        SharedPreferences sharedPreferences = getSharedPreferences(SchoolInfoVaribles.sharedPrefrencesFile, Context.MODE_PRIVATE);
+        return sharedPreferences.getStringSet(id, new HashSet<String>());
+    }
+    private void favoritesSave(String unitid, boolean toBeAdded){
+        Set<String> favorites = retriveStringSetByID("favoritesList");
+        if (toBeAdded){
+            favorites.add(unitid);
+        }
+        else if (!toBeAdded){
+            favorites.remove(unitid);
+        }
+        SharedPreferences sharedPreferences = getSharedPreferences(SchoolInfoVaribles.sharedPrefrencesFile, Context.MODE_PRIVATE);
+        SharedPreferences.Editor editor = sharedPreferences.edit();
+        editor.putStringSet("favoritesList",favorites);
+        editor.apply();
+    }
+
 }
 
