@@ -7,12 +7,12 @@ package com.example.andriod.computerglitzapp;
 public class FinancailInfoItem {
     private int mIndent;
     private String mText;
-    private boolean mIsChecked;
+    private int mId;
 
-    public FinancailInfoItem(int mIndent, String mText, boolean mIsChecked) {
+    public FinancailInfoItem(int mIndent, String mText, int mId) {
         this.mIndent = mIndent;
         this.mText = mText;
-        this.mIsChecked = mIsChecked;
+        this.mId = mId;
     }
 
     public int getmIndent() {
@@ -31,11 +31,8 @@ public class FinancailInfoItem {
         this.mText = mText;
     }
 
-    public boolean ismIsChecked() {
-        return mIsChecked;
-    }
+    public int setmId (int mId) { return mId = mId; }
 
-    public void setmIsChecked(boolean mIsChecked) {
-        this.mIsChecked = mIsChecked;
-    }
+
+
 }

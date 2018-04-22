@@ -4,16 +4,14 @@ package com.example.andriod.computerglitzapp;
  * Created by Clare on 4/7/2018.
  */
 
-public class IndividualChecklistItem {
+public class SkillsItem {
     private int mIndent;
     private String mText;
-    private boolean mIsChecked;
     private int mId;
 
-    public IndividualChecklistItem(int mIndent, String mText, boolean mIsChecked, int mId) {
+    public SkillsItem(int mIndent, String mText, int mId) {
         this.mIndent = mIndent;
         this.mText = mText;
-        this.mIsChecked = mIsChecked;
         this.mId = mId;
     }
 
@@ -33,19 +31,8 @@ public class IndividualChecklistItem {
         this.mText = mText;
     }
 
-    public boolean ismIsChecked() {
-        return mIsChecked;
-    }
+    public int setmId (int mId) { return mId = mId; }
 
-    public void setmIsChecked(boolean mIsChecked) {
-        this.mIsChecked = mIsChecked;
-    }
 
-    public int getmId() {
-        return mId;
-    }
 
-    public void setmId(int mId) {
-        this.mId = mId;
-    }
 }
