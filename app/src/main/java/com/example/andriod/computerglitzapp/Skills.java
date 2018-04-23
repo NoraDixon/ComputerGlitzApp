@@ -13,7 +13,7 @@ import android.view.MenuItem;
 public class Skills extends AppCompatActivity {
 
     private RecyclerView mRecycler;
-    private SkillsAdapter mAdapter;
+    //private SkillsAdapter mAdapter;
 
     private BottomNavigationView.OnNavigationItemSelectedListener mOnNavigationItemSelectedListener
             = new BottomNavigationView.OnNavigationItemSelectedListener() {
@@ -45,8 +45,8 @@ public class Skills extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_checklist);
         mRecycler = (RecyclerView) findViewById(R.id.reclycler);
-        mAdapter = new SkillsAdapter();
-        mRecycler.setAdapter(mAdapter);
+//        mAdapter = new SkillsAdapter();
+//        mRecycler.setAdapter(mAdapter);
         BottomNavigationView navigation = findViewById(R.id.navigation);
         navigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
         Menu a = navigation.getMenu();

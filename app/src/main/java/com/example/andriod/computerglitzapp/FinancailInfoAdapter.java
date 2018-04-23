@@ -20,7 +20,7 @@ static class MyViewHolder extends RecyclerView.ViewHolder{
     public MyViewHolder(View itemView) {
         super(itemView);
         mMytextview = itemView.findViewById(R.id.view_holder_textview);
-        mIndent = (int) itemView.getContext().getResources().getDimension(R.dimen.activity_financail_info_indent);
+        mIndent = (int) itemView.getContext().getResources().getDimension(R.dimen.activity_financail_info);
     }
 }
 

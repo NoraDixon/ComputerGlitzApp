@@ -42,6 +42,12 @@
         <activity
             android:name=".Notifications"
             android:label="Hands On"></activity>
+        <activity
+            android:name=".FinancailInfo"
+            android:label="Hands On"></activity>
+        <activity
+            android:name=".Skills"
+            android:label="Hands On"></activity>
     </application>
 
 </manifest>

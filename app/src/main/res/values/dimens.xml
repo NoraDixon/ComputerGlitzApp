@@ -3,4 +3,6 @@
     <dimen name="activity_horizontal_margin">16dp</dimen>
     <dimen name="activity_vertical_margin">16dp</dimen>
     <dimen name="activity_checklist_indent">17dp</dimen>
+    <dimen name="activity_skills_indent">17dp</dimen>
+    <dimen name="activity_financail_info">17dp</dimen>
 </resources>
