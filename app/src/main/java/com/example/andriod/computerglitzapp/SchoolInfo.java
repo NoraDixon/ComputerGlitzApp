@@ -115,6 +115,12 @@ public class SchoolInfo extends AppCompatActivity {
             }
         });
         final ImageButton calendarButton = findViewById(R.id.calendar);
+        calendarButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(SchoolInfo.this, Notifications.class));
+            }
+        });
 
         BottomNavigationView navigation = (BottomNavigationView) findViewById(R.id.navigation);
         navigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);

@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">ComputerGlitzApp</string>
+    <string name="app_name">Hands On</string>
     <string name="title_home">Home</string>
     <string name="title_dashboard">Dashboard</string>
     <string name="title_notifications">Notifications</string>
@@ -8,4 +8,5 @@
     <string name="title_activity_favorites">Favorites</string>
     <string name="title_activity_school_info">SchoolInfo</string>
     <string name="title_activity_trending_jobs">TrendingJobs</string>
+    <string name="title_activity_notifications">Notifications</string>
 </resources>

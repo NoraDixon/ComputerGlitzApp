@@ -73,13 +73,22 @@ public class MainActivity extends AppCompatActivity {
                 // Toast.makeText(MainActivity.this, "" + position,
                 //  Toast.LENGTH_SHORT).show();
                 if(position == 0) {
-                    startActivity(new Intent(MainActivity.this, SchoolInfo.class));
+                    startActivity(new Intent(MainActivity.this, Checklist.class));
                 }
                 else if(position == 1) {
-                    startActivity(new Intent(MainActivity.this, TrendingJobs.class));
+                    startActivity(new Intent(MainActivity.this, Favorites.class));
                 }
                 else if(position == 2) {
                     startActivity(new Intent(MainActivity.this, CollegeListActivity.class));
+                }
+                else if(position == 3) {
+                    startActivity(new Intent(MainActivity.this, TrendingJobs.class));
+                }
+                else if(position == 4) {
+                    startActivity(new Intent(MainActivity.this, Skills.class));
+                }
+                else if(position == 5) {
+                    startActivity(new Intent(MainActivity.this, FinancailInfo.class));
                 }
             }
         });
