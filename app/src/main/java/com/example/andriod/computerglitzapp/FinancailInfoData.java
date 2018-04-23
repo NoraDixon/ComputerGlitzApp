@@ -10,11 +10,11 @@ import java.util.ArrayList;
  */
 
 public class FinancailInfoData {
-    public static ArrayList<FinancailInfoItem> mTextview = new ArrayList<>();
+    public static ArrayList<FinancailInfoItem> mButton = new ArrayList<>();
     static {
-        mTextview.add(new FinancailInfoItem (0, "FAFSA https://fafsa.ed.gov/ ",0 ));
-        mTextview.add(new FinancailInfoItem (0, "SCHOLARSHIPS https://www.scholarships.com/",1 ));
-        mTextview.add(new FinancailInfoItem (0, "IMPORTANT THINGS TO KNOW ABOUT FASFA https://blog.ed.gov/2017/09/12-common-fafsa-mistakes-2/",2 ));
+        mButton.add(new FinancailInfoItem (0, "FAFSA", "https://fafsa.ed.gov/ ",0 ));
+        mButton.add(new FinancailInfoItem (0, "SCHOLARSHIPS", "https://www.scholarships.com/",1 ));
+        mButton.add(new FinancailInfoItem (0, "IMPORTANT THINGS TO KNOW ABOUT FASFA", "https://blog.ed.gov/2017/09/12-common-fafsa-mistakes-2/",2 ));
         // FIND THE ADD NOTES PART FROM NORA'S CODE
     }
     }

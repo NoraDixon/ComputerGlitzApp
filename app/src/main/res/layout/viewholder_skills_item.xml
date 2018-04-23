@@ -7,6 +7,14 @@
     <TextView
         android:id="@+id/view_holder_textview"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
+        android:layout_height="wrap_content"
+        android:textSize="24dp"
+        android:paddingBottom="9dp"/>
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="24dp"
+        android:paddingBottom="9dp"/>
 
 </LinearLayout>
