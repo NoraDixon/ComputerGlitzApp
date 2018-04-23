@@ -13,7 +13,7 @@ import android.view.MenuItem;
 public class FinancailInfo extends AppCompatActivity {
 
     private RecyclerView mRecycler;
-    private ChecklistAdapter mAdapter;
+    private FinancailInfoAdapter mAdapter;
 
     private BottomNavigationView.OnNavigationItemSelectedListener mOnNavigationItemSelectedListener
             = new BottomNavigationView.OnNavigationItemSelectedListener() {
@@ -43,14 +43,14 @@ public class FinancailInfo extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_checklist);
+        setContentView(R.layout.activity_financail_info);
         mRecycler = (RecyclerView) findViewById(R.id.reclycler);
-        mAdapter = new ChecklistAdapter();
+        mAdapter = new FinancailInfoAdapter();
         mRecycler.setAdapter(mAdapter);
         BottomNavigationView navigation = findViewById(R.id.navigation);
         navigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
         Menu a = navigation.getMenu();
-        MenuItem b = a.findItem(R.id.navigation_checkmark);
+        MenuItem b = a.findItem(R.id.navigation_home);
         b.setChecked(true);
     }
 
