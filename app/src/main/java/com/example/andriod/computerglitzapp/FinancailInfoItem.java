@@ -7,6 +7,15 @@ package com.example.andriod.computerglitzapp;
 public class FinancailInfoItem {
     private int mIndent;
     private String mText;
+
+    public void setmLink(String mLink) {
+        this.mLink = mLink;
+    }
+
+    public int getmId() {
+        return mId;
+    }
+
     private String mLink;
     private int mId;
 
