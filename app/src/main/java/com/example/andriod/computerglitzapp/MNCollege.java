@@ -23,6 +23,7 @@ public class MNCollege implements Serializable {
     private String tuitfte;
     private String pcip01;
     private String pcip11;
+    private String pcip12;
     private String pcip15;
     private String pcip43;
     private String pcip46;
@@ -57,6 +58,7 @@ public class MNCollege implements Serializable {
         this.tuitfte = tuitfte;
         this.pcip01 = pcip01;
         this.pcip11 = pcip11;
+        this.pcip12 = pcip12;
         this.pcip15 = pcip15;
         this.pcip43 = pcip43;
         this.pcip46 = pcip46;
@@ -72,6 +74,9 @@ public class MNCollege implements Serializable {
         }
         if(!getPcip11().equals("NULL") && Double.parseDouble(getPcip11())>0){
             programList.add("Computer and Information Sciences and Support Services");
+        }
+        if(!getPcip12().equals("NULL") && Double.parseDouble(getPcip11())>0){
+            programList.add("Personal and Culinary Services");
         }
         if(!getPcip15().equals("NULL") && Double.parseDouble(getPcip15())>0){
             programList.add("Engineering Technologies and Engineering-Related Fields");
@@ -210,6 +215,12 @@ public class MNCollege implements Serializable {
     public void setPcip11(String pcip11) {
         this.pcip11 = pcip11;
     }
+
+    public String getPcip12() {
+        return pcip12;
+    }
+
+    public void setPcip12(String pcip12) {this.pcip12 = pcip12;}
 
     public String getPcip15() {
         return pcip15;

@@ -32,7 +32,6 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/dayButton"
         app:menu="@menu/navigation" />
 
     <DatePicker
@@ -42,7 +41,6 @@
         android:layout_marginEnd="44dp"
         android:layout_marginStart="44dp"
         android:layout_marginTop="20dp"
-        android:visibility="invisible"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
@@ -56,10 +54,9 @@
         android:layout_marginTop="24dp"
         android:onClick="showDatePickerDialog"
         android:text="Done"
-        android:visibility="invisible"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/datePicker"
-        tools:ignore="MissingConstraints,OnClick" />
+        tools:ignore="MissingConstraints,OnClick"/>
 
     <Button
         android:id="@+id/timeButton"
@@ -88,37 +85,31 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/dateMessage" />
 
-    <EditText
-        android:id="@+id/titleText"
-        android:layout_width="316dp"
-        android:layout_height="121dp"
-        android:layout_marginBottom="16dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
-        android:ems="10"
-        android:inputType="textPersonName"
-        android:text="Name"
-        app:layout_constraintBottom_toTopOf="@+id/bodyText"
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/dateMessage"
+        android:layout_marginBottom="240dp"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.493"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.828" />
+        android:id="@+id/layout"
+        android:visibility="invisible">
 
-    <EditText
-        android:id="@+id/bodyText"
-        android:layout_width="315dp"
-        android:layout_height="139dp"
-        android:layout_marginBottom="76dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginStart="8dp"
-        android:ems="10"
-        android:inputType="textPersonName"
-        android:text="Name"
-        app:layout_constraintBottom_toTopOf="@+id/textButton"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        <EditText
+            android:id="@+id/bodyText"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="16dp"
+            android:ems="10"
+            android:hint="What do you want to be reminded about"
+            android:inputType="textMultiLine"
+            android:paddingBottom="100dp"
+            android:paddingTop="25dp"
+            android:textColor="@color/black"
+            android:windowSoftInputMode="stateHidden" />
+
+
+    </LinearLayout>
 
     <Button
         android:id="@+id/textButton"
@@ -126,10 +117,12 @@
         android:layout_height="50dp"
         android:layout_marginEnd="8dp"
         android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
         android:text="Done"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.472"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/datePicker" />
+        app:layout_constraintTop_toBottomOf="@+id/layout"
+        android:visibility="invisible"
+        />
 
 </android.support.constraint.ConstraintLayout>

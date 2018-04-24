@@ -28,10 +28,14 @@ public class AlarmReciver extends BroadcastReceiver{
         NotificationChannel channel = new NotificationChannel("Channel", name, NotificationManager.IMPORTANCE_DEFAULT);
         channel.setDescription(description);
         // Register the channel with the system
+        String test = intent.getStringExtra("text");
+        if(intent.getData() != null) {
+            test = intent.getData().getSchemeSpecificPart();
+        }
         notificationManager.createNotificationChannel(channel);
         NotificationCompat.Builder builder = new NotificationCompat.Builder(context, "Channel")
                 .setSmallIcon(R.drawable.ic_home_black_24dp)
-                .setContentTitle("something") //title
+                .setContentTitle("Hands On") //title
                 .setContentText(intent.getStringExtra("text")) //text
                 .setPriority(NotificationCompat.PRIORITY_DEFAULT);
         notificationManager.notify(0,builder.build());

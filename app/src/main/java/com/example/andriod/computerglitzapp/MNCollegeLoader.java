@@ -21,7 +21,7 @@ public class MNCollegeLoader {
         List<MNCollege> mnColleges = new ArrayList<>();
 
         try {
-            InputStream inputStream = assetManager.open("MNData.csv");
+            InputStream inputStream = assetManager.open("CollegeScorecardDataFinal.csv");
             InputStreamReader inputStreamReader = new InputStreamReader(inputStream);
             CSVReader csvReader = new CSVReader(inputStreamReader);
             List<String[]>bunchOfLists = csvReader.readAll();

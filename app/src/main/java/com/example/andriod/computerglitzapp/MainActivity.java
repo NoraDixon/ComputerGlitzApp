@@ -2,7 +2,10 @@
 
 package com.example.andriod.computerglitzapp;
 
+import android.content.BroadcastReceiver;
 import android.content.Intent;
+import android.content.IntentFilter;
+import android.net.ConnectivityManager;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.design.widget.BottomNavigationView;
@@ -98,6 +101,11 @@ public class MainActivity extends AppCompatActivity {
                 mnCollegeDataHolder.setCollegeData(collegeList);
                 FavoritesDataHolder favoritesDataHolder = FavoritesDataHolder.getInstance();
                 favoritesDataHolder.setCollegeData(new ArrayList<MNCollege>());
+
+            BroadcastReceiver br = new AlarmReciver();
+            IntentFilter filter = new IntentFilter(ConnectivityManager.CONNECTIVITY_ACTION);
+            filter.addAction(Intent.ACTION_AIRPLANE_MODE_CHANGED);
+            this.registerReceiver(br, filter);
 //        }
     }
 }

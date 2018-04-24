@@ -5,6 +5,7 @@ import android.support.v7.widget.RecyclerView.Adapter;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.TextView;
 
@@ -15,11 +16,13 @@ import android.widget.TextView;
 public class FinancailInfoAdapter extends Adapter<FinancailInfoAdapter.MyViewHolder> {
 static class MyViewHolder extends RecyclerView.ViewHolder{
     private TextView mMytextview;
+    private Button mMybutton;
 
     private int mIndent;
     public MyViewHolder(View itemView) {
         super(itemView);
         mMytextview = itemView.findViewById(R.id.view_holder_textview);
+        mMybutton = itemView.findViewById(R.id.view_holder_button);
         mIndent = (int) itemView.getContext().getResources().getDimension(R.dimen.activity_financail_info);
     }
 }
@@ -32,14 +35,15 @@ static class MyViewHolder extends RecyclerView.ViewHolder{
 
     @Override
     public void onBindViewHolder(MyViewHolder holder, int position) {
-FinancailInfoItem item = FinancailInfoData.mTextview.get(position);
+FinancailInfoItem item = FinancailInfoData.mButton.get(position);
 holder.mMytextview.setText(item.getmText());
+holder.mMybutton.setText(item.getmLink());
 holder.itemView.setPadding(holder.mIndent*item.getmIndent(),0,0,0);
     }
 
     @Override
     public int getItemCount() {
-        return FinancailInfoData.mTextview.size();
+        return FinancailInfoData.mButton.size();
     }
 
 

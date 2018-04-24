@@ -8,10 +8,24 @@ public class SkillsItem {
     private int mIndent;
     private String mText;
     private int mId;
+    private String mLink;
 
-    public SkillsItem(int mIndent, String mText, int mId) {
+    public int getmId() {
+        return mId;
+    }
+
+    public String getmLink() {
+        return mLink;
+    }
+
+    public void setmLink(String mLink) {
+        this.mLink = mLink;
+    }
+
+    public SkillsItem(int mIndent, String mText, String mLink, int mId) {
         this.mIndent = mIndent;
         this.mText = mText;
+        this.mLink = mLink;
         this.mId = mId;
     }
 

@@ -7,11 +7,23 @@ package com.example.andriod.computerglitzapp;
 public class FinancailInfoItem {
     private int mIndent;
     private String mText;
+
+    public void setmLink(String mLink) {
+        this.mLink = mLink;
+    }
+
+    public int getmId() {
+        return mId;
+    }
+
+    private String mLink;
     private int mId;
 
-    public FinancailInfoItem(int mIndent, String mText, int mId) {
+
+    public FinancailInfoItem(int mIndent, String mText, String mLink, int mId) {
         this.mIndent = mIndent;
         this.mText = mText;
+        this.mLink = mLink;
         this.mId = mId;
     }
 
@@ -26,6 +38,8 @@ public class FinancailInfoItem {
     public String getmText() {
         return mText;
     }
+
+    public String getmLink() { return mLink; }
 
     public void setmText(String mText) {
         this.mText = mText;
