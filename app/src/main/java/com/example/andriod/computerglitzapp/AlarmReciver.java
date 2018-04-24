@@ -36,7 +36,7 @@ public class AlarmReciver extends BroadcastReceiver{
         NotificationCompat.Builder builder = new NotificationCompat.Builder(context, "Channel")
                 .setSmallIcon(R.drawable.ic_home_black_24dp)
                 .setContentTitle("Hands On") //title
-                .setContentText(intent.getStringExtra("text")) //text
+                .setContentText(intent.getStringExtra("Fill Out Scholarship")) //text
                 .setPriority(NotificationCompat.PRIORITY_DEFAULT);
         notificationManager.notify(0,builder.build());
 

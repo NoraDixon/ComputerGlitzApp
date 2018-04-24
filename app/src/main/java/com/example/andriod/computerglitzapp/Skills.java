@@ -28,7 +28,7 @@ public class Skills extends AppCompatActivity {
                     startActivity(new Intent(Skills.this, MainActivity.class));
                     return true;
                 case R.id.navigation_checkmark:
-                    startActivity(new Intent(Skills.this, Skills.class));
+                    startActivity(new Intent(Skills.this, Checklist.class));
                     return true;
                 case R.id.navigation_search:
                     startActivity(new Intent(Skills.this, CollegeListActivity.class));

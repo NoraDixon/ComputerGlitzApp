@@ -32,7 +32,7 @@ public class FinancailInfo extends AppCompatActivity {
                     startActivity(new Intent(FinancailInfo.this, MainActivity.class));
                     return true;
                 case R.id.navigation_checkmark:
-                    startActivity(new Intent(FinancailInfo.this, FinancailInfo.class));
+                    startActivity(new Intent(FinancailInfo.this, Checklist.class));
                     return true;
                 case R.id.navigation_search:
                     startActivity(new Intent(FinancailInfo.this, CollegeListActivity.class));
