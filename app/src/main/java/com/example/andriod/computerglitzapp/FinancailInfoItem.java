@@ -20,6 +20,7 @@ public class FinancailInfoItem {
     private int mId;
 
 
+
     public FinancailInfoItem(int mIndent, String mText, String mLink, int mId) {
         this.mIndent = mIndent;
         this.mText = mText;
