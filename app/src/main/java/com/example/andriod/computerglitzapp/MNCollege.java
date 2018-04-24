@@ -41,7 +41,7 @@ public class MNCollege implements Serializable {
     public MNCollege() {
     }
 
-    public MNCollege(String unitid, String opeid, String opeid6, String name, String city, String state, String zip, String website, String npcurl, String costt4_A, String tuitfte, String pcip01, String pcip11, String pcip15, String pcip43, String pcip46, String pcip47, String pcip48, String pcip49, String pcip50, String pcip51, String pcip52) {
+    public MNCollege(String unitid, String opeid, String opeid6, String name, String city, String state, String zip, String website, String npcurl, String costt4_A, String tuitfte, String pcip01, String pcip11, String pcip15, String pcip43, String pcip46, String pcip47, String pcip48, String pcip49, String pcip50, String pcip51, String pcip52, String pcip12) {
         this.unitid = unitid;
         this.opeid = opeid;
         this.opeid6 = opeid6;
@@ -75,7 +75,7 @@ public class MNCollege implements Serializable {
         if(!getPcip11().equals("NULL") && Double.parseDouble(getPcip11())>0){
             programList.add("Computer and Information Sciences and Support Services");
         }
-        if(!getPcip12().equals("NULL") && Double.parseDouble(getPcip11())>0){
+        if(!getPcip12().equals("NULL") && Double.parseDouble(getPcip12())>0){
             programList.add("Personal and Culinary Services");
         }
         if(!getPcip15().equals("NULL") && Double.parseDouble(getPcip15())>0){

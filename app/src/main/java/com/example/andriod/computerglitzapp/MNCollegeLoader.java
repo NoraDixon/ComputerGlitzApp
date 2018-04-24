@@ -48,7 +48,8 @@ public class MNCollegeLoader {
                       criteria[18],
                       criteria[19],
                       criteria[20],
-                      criteria[21]);
+                      criteria[21],
+                      criteria[22]);
               mnColleges.add(readableMNCollegeData);
 
             }
