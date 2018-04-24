@@ -7,7 +7,7 @@
     android:layout_height="match_parent"
     tools:context="com.example.andriod.computerglitzapp.Checklist">
 
-    <android.support.v7.widget.RecyclerView
+  <!--  <android.support.v7.widget.RecyclerView
         android:id="@+id/reclycler"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -17,7 +17,7 @@
         android:scrollbars="vertical"
         app:layoutManager="android.support.v7.widget.LinearLayoutManager"
         app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent" /> -->
 
     <android.support.design.widget.BottomNavigationView
         android:id="@+id/navigation"
@@ -30,5 +30,268 @@
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:menu="@menu/navigation" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:layout_editor_absoluteY="0dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/intrestText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp"
+                android:layout_marginEnd="8dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="8dp"
+                android:text="Careers Interest Assessment"
+                android:textColor="@color/black"
+                android:textSize="20dp"
+                app:layout_constraintBottom_toTopOf="@+id/button2"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <Button
+                android:id="@+id/intrestButton"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="8dp"
+                android:layout_marginStart="8dp"
+                android:background="@color/white"
+                android:text="https://careerwise.minnstate.edu/careers/interestassessment.html"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                tools:layout_editor_absoluteY="59dp" />
+
+            <TextView
+                android:id="@+id/clusterText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Career Cluster Interest Survey"
+                android:textColor="@color/black"
+                android:textSize="20dp"
+                tools:layout_editor_absoluteX="176dp"
+                tools:layout_editor_absoluteY="119dp" />
+
+            <Button
+                android:id="@+id/clusterButton"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/white"
+                android:text="https://careerwise.minnstate.edu/careers/clusterSurvey?do=0"
+                tools:layout_editor_absoluteX="161dp"
+                tools:layout_editor_absoluteY="152dp" />
+
+            <TextView
+                android:id="@+id/seekText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="ISeek"
+                android:textColor="@color/black"
+                android:textSize="20dp"
+                tools:layout_editor_absoluteX="176dp"
+                tools:layout_editor_absoluteY="119dp" />
+
+            <Button
+                android:id="@+id/seekButton"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/white"
+                android:text="http://www.iseek.org/careers/stem.html"
+                tools:layout_editor_absoluteX="161dp"
+                tools:layout_editor_absoluteY="152dp" />
+
+            <TextView
+                android:id="@+id/gpsText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="My GPS Life Plan"
+                android:textColor="@color/black"
+                android:textSize="20dp"
+                tools:layout_editor_absoluteX="176dp"
+                tools:layout_editor_absoluteY="119dp" />
+
+            <Button
+                android:id="@+id/gpsButton"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/white"
+                android:text="https://mygpslifeplan.org/"
+                tools:layout_editor_absoluteX="161dp"
+                tools:layout_editor_absoluteY="152dp" />
+
+            <TextView
+                android:id="@+id/exploreText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Carrer Expolaration"
+                android:textColor="@color/black"
+                android:textSize="20dp"
+                tools:layout_editor_absoluteX="176dp"
+                tools:layout_editor_absoluteY="119dp" />
+
+            <Button
+                android:id="@+id/exploreButton"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/white"
+                android:text="https://www.bls.gov/k12/content/students/careers/career-exploration.htm"
+                tools:layout_editor_absoluteX="161dp"
+                tools:layout_editor_absoluteY="152dp" />
+
+            <TextView
+                android:id="@+id/adviceText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Best Free Carrer Assessment Tools"
+                android:textColor="@color/black"
+                android:textSize="20dp"
+                tools:layout_editor_absoluteX="176dp"
+                tools:layout_editor_absoluteY="119dp" />
+
+            <Button
+                android:id="@+id/adviceButton"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/white"
+                android:text="https://www.monster.com/career-advice/article/best-free-career-assessment-tools "
+                tools:layout_editor_absoluteX="161dp"
+                tools:layout_editor_absoluteY="152dp" />
+
+            <TextView
+                android:id="@+id/top30Text"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp"
+                android:layout_marginEnd="8dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="8dp"
+                android:text="Top 30 Highest Paying Trade School Jobs and Vocational Careers"
+                android:textColor="@color/black"
+                android:textSize="20dp"
+                app:layout_constraintBottom_toTopOf="@+id/button2"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <Button
+                android:id="@+id/top30Button"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="8dp"
+                android:layout_marginStart="8dp"
+                android:background="@color/white"
+                android:text="https://www.onlinecollegeplan.com/vocational-school-highest-paying-careers/"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                tools:layout_editor_absoluteY="59dp" />
+
+            <TextView
+                android:id="@+id/payText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Highest paying jobs with 2 years or less of post-secondary education"
+                android:textColor="@color/black"
+                android:textSize="20dp"
+                tools:layout_editor_absoluteX="176dp"
+                tools:layout_editor_absoluteY="119dp" />
+
+            <Button
+                android:id="@+id/payButton"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/white"
+                android:text="https://www.trade-schools.net/articles/highest-paying-jobs-without-degree.asp"
+                tools:layout_editor_absoluteX="161dp"
+                tools:layout_editor_absoluteY="152dp" />
+
+            <TextView
+                android:id="@+id/high43Text"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="43 Trade school jobs among the highest paid jobs"
+                android:textColor="@color/black"
+                android:textSize="20dp"
+                tools:layout_editor_absoluteX="176dp"
+                tools:layout_editor_absoluteY="119dp" />
+
+            <Button
+                android:id="@+id/high43Button"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/white"
+                android:text="https://www.trade-schools.net/articles/trade-school-jobs.asp "
+                tools:layout_editor_absoluteX="161dp"
+                tools:layout_editor_absoluteY="152dp" />
+
+            <TextView
+                android:id="@+id/americaText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="23 High paying skilled trades in America"
+                android:textColor="@color/black"
+                android:textSize="20dp"
+                tools:layout_editor_absoluteX="176dp"
+                tools:layout_editor_absoluteY="119dp" />
+
+            <Button
+                android:id="@+id/americaButton"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/white"
+                android:text="https://www.trade-schools.net/articles/trade-school-jobs.asp"
+                tools:layout_editor_absoluteX="161dp"
+                tools:layout_editor_absoluteY="152dp" />
+
+            <TextView
+                android:id="@+id/handbookText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Job Outlook Handbook"
+                android:textColor="@color/black"
+                android:textSize="20dp"
+                tools:layout_editor_absoluteX="176dp"
+                tools:layout_editor_absoluteY="119dp" />
+
+            <Button
+                android:id="@+id/handbookButton"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/white"
+                android:text="https://www.bls.gov/ooh/"
+                tools:layout_editor_absoluteX="161dp"
+                tools:layout_editor_absoluteY="152dp" />
+
+            <TextView
+                android:id="@+id/blueText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Is A Blue Collar Job Right For You"
+                android:textColor="@color/black"
+                android:textSize="20dp"
+                tools:layout_editor_absoluteX="176dp"
+                tools:layout_editor_absoluteY="119dp" />
+
+            <Button
+                android:id="@+id/blueButton"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/white"
+                android:text="https://www.gcflearnfree.org/careers-without-college/is-a-bluecollar-career-right-for-you/1/"
+                tools:layout_editor_absoluteX="161dp"
+                tools:layout_editor_absoluteY="152dp" />
+
+        </LinearLayout>
+    </ScrollView>
 
 </android.support.constraint.ConstraintLayout>
