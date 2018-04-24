@@ -5,6 +5,7 @@ import android.app.DialogFragment;
 import android.app.PendingIntent;
 import android.content.Context;
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.design.widget.BottomNavigationView;
@@ -13,9 +14,14 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.DatePicker;
+import android.widget.EditText;
 import android.widget.ImageButton;
+import android.widget.LinearLayout;
 import android.widget.TextView;
+import android.widget.TimePicker;
 import android.widget.Toast;
+
+import com.opencsv.stream.reader.LineReader;
 
 import java.util.Calendar;
 
@@ -56,9 +62,13 @@ public class Notifications extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_notifications);
 
+        final LinearLayout mLayout = (LinearLayout) findViewById(R.id.layout);
+       // final EditText mEditText = (EditText) findViewById(R.id.bodyText);
+        final Button mDateButton = (Button) findViewById(R.id.dayButton);
+        final Button mTimeButton = (Button) findViewById(R.id.timeButton);
+        final Button mTextButton = (Button) findViewById(R.id.textButton);
+        final TimePicker mTimePicker = (TimePicker) findViewById(R.id.timePicker);
         final DatePicker mDatePicker = (DatePicker) findViewById(R.id.datePicker);
-        final Intent intent = new Intent(this, AlarmReciver.class); //set title and text
-        final PendingIntent pendingIntent = PendingIntent.getBroadcast(this, 0, intent, 0);
         final Button dateButton = findViewById(R.id.dayButton);
         dateButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -68,17 +78,47 @@ public class Notifications extends AppCompatActivity {
                 int month = mDatePicker.getMonth() + 1;
                 int year = mDatePicker.getYear();
 
-                Calendar calendar = Calendar.getInstance();
-                calendar.set(year, month, day);
-
-                intent.putExtra("text", calendar.getTimeInMillis()); //this
-                AlarmManager alarmManager = (AlarmManager) getSystemService(Context.ALARM_SERVICE);
-                alarmManager.set(AlarmManager.RTC_WAKEUP, calendar.getTimeInMillis(), pendingIntent);
-
-                Toast.makeText(Notifications.this, "" + mDatePicker,
-                        Toast.LENGTH_SHORT).show();
+                mDateButton.setVisibility(View.GONE);
+                mDatePicker.setVisibility(View.GONE);
+                mTimeButton.setVisibility(View.VISIBLE);
+                mTimePicker.setVisibility(View.VISIBLE);
             }
         });
+        mTimeButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                mTimeButton.setVisibility(View.GONE);
+                mTimePicker.setVisibility(View.GONE);
+                mTextButton.setVisibility(View.VISIBLE);
+                mLayout.setVisibility(View.VISIBLE);
+            }
+        });
+        mTextButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                EditText mEditText = (EditText) findViewById(R.id.bodyText);
+                int hour = mTimePicker.getHour();
+                int minute = mTimePicker.getMinute();
+
+                int day = mDatePicker.getDayOfMonth();
+                int month = mDatePicker.getMonth() + 1;
+                int year = mDatePicker.getYear();
+
+                Calendar calendar = Calendar.getInstance();
+                calendar.set(year, month, day, hour, minute);
+
+                long test = calendar.getTimeInMillis();
+                Intent intent = new Intent("Action", Uri.parse(mEditText.getText().toString()),getApplicationContext(), AlarmReciver.class); //set title and text
+                //intent.putExtra("text", mEditText.getText()); //this
+                intent.putExtra("text", "Text"); //this
+
+                AlarmManager alarmManager = (AlarmManager) getSystemService(Context.ALARM_SERVICE);
+                PendingIntent pendingIntent = PendingIntent.getBroadcast(getApplicationContext(), 0, intent, 0);
+                alarmManager.set(AlarmManager.RTC_WAKEUP, calendar.getTimeInMillis(), pendingIntent);
+                startActivity(new Intent(Notifications.this, MainActivity.class));
+            }
+        });
+
 
         //  mDatePicker.setOnDateChangedListener();
 
