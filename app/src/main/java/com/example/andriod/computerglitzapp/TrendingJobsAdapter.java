@@ -33,7 +33,7 @@ public class TrendingJobsAdapter extends RecyclerView.Adapter<TrendingJobsAdapte
     public void onBindViewHolder(MyViewHolder holder, int position) {
         TrendingJobsData item = TrendingJobsHolder.getInstance().getTrendingDatas().get(position);
         holder.mTrendingViewJobs.setText(item.getJob());
-        holder.mTrendingViewPay.setText(item.getPay());
+        holder.mTrendingViewPay.setText("$" + item.getPay());
 
     }
 
