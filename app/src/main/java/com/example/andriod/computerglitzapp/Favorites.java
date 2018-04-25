@@ -19,8 +19,6 @@ import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 
-import static com.example.andriod.computerglitzapp.MNCollegeDataHolder.getInstance;
-
 public class Favorites extends AppCompatActivity {
 
     private TextView mTextMessage;
@@ -92,7 +90,7 @@ public class Favorites extends AppCompatActivity {
     }
 
         public Set<String> retriveStringSetByID (String id){
-            SharedPreferences sharedPreferences = getSharedPreferences(SchoolInfoVaribles.sharedPrefrencesFile, Context.MODE_PRIVATE);
+            SharedPreferences sharedPreferences = getSharedPreferences(AppVaribles.sharedPrefrencesFile, Context.MODE_PRIVATE);
             return sharedPreferences.getStringSet(id, new HashSet<String>());
         }
     }

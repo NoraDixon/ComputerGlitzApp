@@ -69,7 +69,7 @@ public class CollegeListActivity extends AppCompatActivity
         mRecycler.addOnItemTouchListener(new RecycleOnClickListener(getBaseContext(), new RecycleOnClickListener.OnItemClickListener() {
             @Override
             public void onItemClick(View view, int position) {
-                collegeView.putExtra("CollegeSelected", MNCollegeDataHolder.getInstance().getCollegeData().get(position)); //this
+                collegeView.putExtra("CollegeSelected", MNCollegeDataHolder.getInstance().getFilteredCollegeData().get(position)); //this
                 startActivity(collegeView); //this
 
             }
