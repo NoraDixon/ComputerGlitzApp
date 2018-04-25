@@ -50,7 +50,8 @@
         android:layout_marginTop="16dp"
         android:text="Search"
         app:layout_constraintStart_toEndOf="@+id/clear"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        android:textColor="@color/black"/>
 
     <Button
         android:id="@+id/clear"
@@ -60,6 +61,7 @@
         android:layout_marginTop="16dp"
         android:text="X"
         app:layout_constraintStart_toEndOf="@+id/editSearch"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        android:textColor="@color/black"/>
 
 </android.support.constraint.ConstraintLayout>

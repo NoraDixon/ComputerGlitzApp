@@ -9,7 +9,8 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:textSize="24dp"
-        android:paddingBottom="9dp"/>
+        android:paddingBottom="9dp"
+        android:textColor="@color/black"/>
 
     <Button
         android:id="@+id/view_holder_button"
