@@ -52,27 +52,12 @@ public class FinancailInfo extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_financail_info);
-//        requestWindowFeature(Window.FEATURE_NO_TITLE);
 
-//        mRecycler = (RecyclerView) findViewById(R.id.reclycler);
-//        mAdapter = new FinancailInfoAdapter();
-//        mRecycler.setAdapter(mAdapter);
         BottomNavigationView navigation = findViewById(R.id.navigation);
         navigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
         Menu a = navigation.getMenu();
         MenuItem b = a.findItem(R.id.navigation_home);
         b.setChecked(true);
-
-//        final MNCollege mnCollege = (MNCollege) getIntent().getSerializableExtra("CollegeSelected");
-//        final Button websiteButton = (Button) findViewById(R.id.view_holder_button);
-//        websiteButton.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View view) {
-//                Intent browserIntent = new Intent(Intent.ACTION_VIEW, Uri.parse(mnCollege.getWebsite()));
-//                startActivity(browserIntent);
-//
-//            }
-//        });\
 
         final Button thingsButton = findViewById(R.id.thingsButton);
         thingsButton.setOnClickListener(new View.OnClickListener() {

@@ -33,7 +33,6 @@ public class IndividualChecklistData {
         mIndividualChecklist.add(new IndividualChecklistItem(0, "Explore school", false,21));
         mIndividualChecklist.add(new IndividualChecklistItem(1, "School meeting", false,22));
         mIndividualChecklist.add(new IndividualChecklistItem(2, "Set up reminder for school meeting dates", false,23));
-        // add in reminder
         mIndividualChecklist.add(new IndividualChecklistItem(1, "Ask questions from previously created list", false,24));
         mIndividualChecklist.add(new IndividualChecklistItem(1, "Communicate with school faculty", false,25));
         mIndividualChecklist.add(new IndividualChecklistItem(2, "Contact info and names in school details", false,26));
@@ -47,21 +46,17 @@ public class IndividualChecklistData {
         mIndividualChecklist.add(new IndividualChecklistItem(1, "Paperwork needed, e.g, HS diploma, transcript, or GED?", false,34));
         mIndividualChecklist.add(new IndividualChecklistItem(1, "Placement exam, if needed", false,35));
         mIndividualChecklist.add(new IndividualChecklistItem(2, "Set reminder", false,36));
-        // add reminder
         mIndividualChecklist.add(new IndividualChecklistItem(1, "Other requirements? [add in the school details section]", false,37));
         mIndividualChecklist.add(new IndividualChecklistItem(0, "Decide whether to apply", false,38));
         mIndividualChecklist.add(new IndividualChecklistItem(1, "Set reminder", false,39));
-        // add reminder
         mIndividualChecklist.add(new IndividualChecklistItem(1, "Apply to the school", false,40));
         mIndividualChecklist.add(new IndividualChecklistItem(1, "Set up reminders for deadlines", false,41));
-        // add reminder
         mIndividualChecklist.add(new IndividualChecklistItem(0, "Apply for grants and scholarships", false,42));
         mIndividualChecklist.add(new IndividualChecklistItem(1, "Submit FASFA [link in getting started checklist]", false,43));
         mIndividualChecklist.add(new IndividualChecklistItem(1, "Enter scholarships section", false,44));
         mIndividualChecklist.add(new IndividualChecklistItem(0, "Create list of classes you're interested in [add in school details]", false,45));
         mIndividualChecklist.add(new IndividualChecklistItem(1, "Register for classes", false,46));
         mIndividualChecklist.add(new IndividualChecklistItem(1, "Set reminder", false,47));
-        // add reminder
         mIndividualChecklist.add(new IndividualChecklistItem(1, "Attend school orientation", false, 48));
     }
 }

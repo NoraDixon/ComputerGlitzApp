@@ -64,7 +64,6 @@ public class Notifications extends AppCompatActivity {
         final MNCollege mnCollege = (MNCollege)getIntent().getSerializableExtra("CollegeSelected");
 
         final LinearLayout mLayout = (LinearLayout) findViewById(R.id.layout);
-       // final EditText mEditText = (EditText) findViewById(R.id.bodyText);
         final Button mDateButton = (Button) findViewById(R.id.dayButton);
         final Button mTimeButton = (Button) findViewById(R.id.timeButton);
         final Button mTextButton = (Button) findViewById(R.id.textButton);
@@ -110,8 +109,7 @@ public class Notifications extends AppCompatActivity {
 
                 long test = calendar.getTimeInMillis();
                 Intent intent = new Intent("Action", Uri.parse(mEditText.getText().toString()),getApplicationContext(), AlarmReciver.class); //set title and text
-                intent.putExtra("text", mEditText.getText().toString()); //this
-                //intent.putExtra("text", "Text"); //this
+                intent.putExtra("text", mEditText.getText().toString());
 
                 AlarmManager alarmManager = (AlarmManager) getSystemService(Context.ALARM_SERVICE);
                 PendingIntent pendingIntent = PendingIntent.getBroadcast(getApplicationContext(), 0, intent, 0);

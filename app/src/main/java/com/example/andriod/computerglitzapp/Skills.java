@@ -56,16 +56,6 @@ public class Skills extends AppCompatActivity {
         MenuItem b = a.findItem(R.id.navigation_home);
         b.setChecked(true);
 
-//        final MNCollege mnCollege = (MNCollege)getIntent().getSerializableExtra("CollegeSelected");
-//        final Button websiteButton = (Button) findViewById(R.id.view_holder_button);
-//        websiteButton.setOnClickListener(new View.OnClickListener(){
-//            @Override
-//            public void onClick(View view){
-//                Intent browserIntent = new Intent(Intent.ACTION_VIEW, Uri.parse(mnCollege.getWebsite()));
-//                startActivity(browserIntent);
-//            }
-//        });
-
         final Button interstButton = findViewById(R.id.intrestButton);
         interstButton.setOnClickListener (new View.OnClickListener() {
             @Override

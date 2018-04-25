@@ -125,11 +125,8 @@ public class SchoolInfo extends AppCompatActivity {
        }
        TextView mTextProgramMessage = (TextView) findViewById(R.id.programs);
         mTextProgramMessage.setText(putItAllTogether);
-        String collegeNotes = new String();
         EditText collegeNotesView = (EditText) findViewById(R.id.editText);
         collegeNotesView.setText(retriveByID(mnCollege.getUnitid() + "Notes"));
-        //collegeNotes = collegeNotesView.getText().toString();
-        //schoolInfoSave(mnCollege.getUnitid(), collegeNotes);
 
         collegeNotesView.addTextChangedListener(new TextWatcher() {
             @Override

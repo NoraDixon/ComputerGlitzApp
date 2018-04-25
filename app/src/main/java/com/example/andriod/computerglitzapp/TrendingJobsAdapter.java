@@ -35,9 +35,6 @@ public class TrendingJobsAdapter extends RecyclerView.Adapter<TrendingJobsAdapte
         holder.mTrendingViewJobs.setText(item.getJob());
         holder.mTrendingViewPay.setText(item.getPay());
 
-
-//        holder.mTrendingView.setText(item.getmText());
-//        holder.itemView.setPadding(holder.mIndent*item.getmIndent(),0,0,0);
     }
 
     @Override
