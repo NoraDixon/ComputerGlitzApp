@@ -12,6 +12,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.RecyclerView;
 import android.text.Editable;
 import android.text.TextWatcher;
+import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
@@ -56,11 +57,11 @@ public class FinancailInfo extends AppCompatActivity {
 //        mRecycler = (RecyclerView) findViewById(R.id.reclycler);
 //        mAdapter = new FinancailInfoAdapter();
 //        mRecycler.setAdapter(mAdapter);
-//        BottomNavigationView navigation = findViewById(R.id.navigation);
-//        navigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
-//        Menu a = navigation.getMenu();
-//        MenuItem b = a.findItem(R.id.navigation_home);
-//        b.setChecked(true);
+        BottomNavigationView navigation = findViewById(R.id.navigation);
+        navigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
+        Menu a = navigation.getMenu();
+        MenuItem b = a.findItem(R.id.navigation_home);
+        b.setChecked(true);
 
 //        final MNCollege mnCollege = (MNCollege) getIntent().getSerializableExtra("CollegeSelected");
 //        final Button websiteButton = (Button) findViewById(R.id.view_holder_button);
@@ -110,7 +111,7 @@ public class FinancailInfo extends AppCompatActivity {
         });
 
         final EditText financailInfo = (EditText) findViewById(R.id.finacalText);
-        saveFinancial.setText(retriveByID(mnCollege.getUnitid() + "Notes"));
+        financailInfo.setText(retriveByID("financailNotes"));
         financailInfo.addTextChangedListener(new TextWatcher() {
             @Override
             public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
@@ -135,6 +136,10 @@ public class FinancailInfo extends AppCompatActivity {
         SharedPreferences.Editor editor = sharedPreferences.edit();
         editor.putString("financailNotes", notes);
         editor.apply();
+    }
+    public String retriveByID (String id){
+        SharedPreferences sharedPreferences = getSharedPreferences(AppVaribles.sharedPrefrencesFile, Context.MODE_PRIVATE);
+        return sharedPreferences.getString(id, "");
     }
     }
 
