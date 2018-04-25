@@ -22,7 +22,6 @@ static class MyViewHolder extends RecyclerView.ViewHolder{
     public MyViewHolder(View itemView) {
         super(itemView);
         mMytextview = itemView.findViewById(R.id.view_holder_textview);
-        mMainCheckbox = itemView.findViewById(R.id.view_holder_checkbox);
         mCollapsableCheckbox = itemView.findViewById(R.id.view_holder_collapeser_checkbox);
         mIndent = (int) itemView.getContext().getResources().getDimension(R.dimen.activity_checklist_indent);
     }

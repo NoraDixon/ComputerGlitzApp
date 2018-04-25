@@ -1,5 +1,6 @@
 package com.example.andriod.computerglitzapp;
 
+import android.support.v7.widget.RecyclerView;
 import android.widget.EditText;
 import android.widget.TextView;
 
@@ -17,4 +18,6 @@ public class FinancailInfoData {
         mButton.add(new FinancailInfoItem (0, "IMPORTANT THINGS TO KNOW ABOUT FASFA", "https://blog.ed.gov/2017/09/12-common-fafsa-mistakes-2/",2 ));
         // FIND THE ADD NOTES PART FROM NORA'S CODE
     }
-    }
+
+
+}

@@ -11,13 +11,16 @@ import android.support.v7.widget.RecyclerView;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.view.Window;
+import android.widget.AdapterView;
 import android.widget.Button;
+import android.widget.ImageButton;
+import android.widget.TextView;
 
 public class FinancailInfo extends AppCompatActivity {
 
     private RecyclerView mRecycler;
     private FinancailInfoAdapter mAdapter;
-
 
     private BottomNavigationView.OnNavigationItemSelectedListener mOnNavigationItemSelectedListener
             = new BottomNavigationView.OnNavigationItemSelectedListener() {
@@ -29,7 +32,7 @@ public class FinancailInfo extends AppCompatActivity {
                     startActivity(new Intent(FinancailInfo.this, MainActivity.class));
                     return true;
                 case R.id.navigation_checkmark:
-                    startActivity(new Intent(FinancailInfo.this, FinancailInfo.class));
+                    startActivity(new Intent(FinancailInfo.this, Checklist.class));
                     return true;
                 case R.id.navigation_search:
                     startActivity(new Intent(FinancailInfo.this, CollegeListActivity.class));
@@ -48,22 +51,58 @@ public class FinancailInfo extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_financail_info);
-        mRecycler = (RecyclerView) findViewById(R.id.reclycler);
-        mAdapter = new FinancailInfoAdapter();
-        mRecycler.setAdapter(mAdapter);
-        BottomNavigationView navigation = findViewById(R.id.navigation);
-        navigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
-        Menu a = navigation.getMenu();
-        MenuItem b = a.findItem(R.id.navigation_home);
-        b.setChecked(true);
+//        requestWindowFeature(Window.FEATURE_NO_TITLE);
 
-        final MNCollege mnCollege = (MNCollege) getIntent().getSerializableExtra("CollegeSelected");
-        final Button websiteButton = (Button) findViewById(R.id.view_holder_button);
-        websiteButton.setOnClickListener(new View.OnClickListener() {
+//        mRecycler = (RecyclerView) findViewById(R.id.reclycler);
+//        mAdapter = new FinancailInfoAdapter();
+//        mRecycler.setAdapter(mAdapter);
+//        BottomNavigationView navigation = findViewById(R.id.navigation);
+//        navigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
+//        Menu a = navigation.getMenu();
+//        MenuItem b = a.findItem(R.id.navigation_home);
+//        b.setChecked(true);
+
+//        final MNCollege mnCollege = (MNCollege) getIntent().getSerializableExtra("CollegeSelected");
+//        final Button websiteButton = (Button) findViewById(R.id.view_holder_button);
+//        websiteButton.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//                Intent browserIntent = new Intent(Intent.ACTION_VIEW, Uri.parse(mnCollege.getWebsite()));
+//                startActivity(browserIntent);
+//
+//            }
+//        });\
+
+        final Button thingsButton = findViewById(R.id.thingsButton);
+        thingsButton.setOnClickListener (new View.OnClickListener() {
             @Override
-            public void onClick(View view) {
-                Intent browserIntent = new Intent(Intent.ACTION_VIEW, Uri.parse(mnCollege.getWebsite()));
-                startActivity(browserIntent);
+            public void onClick(View view) {Intent intent = new Intent();
+                intent.setAction(Intent.ACTION_VIEW);
+                intent.addCategory(Intent.CATEGORY_BROWSABLE);
+                intent.setData(Uri.parse("https://blog.ed.gov/2017/09/12-common-fafsa-mistakes-2/"));
+                startActivity(intent);
+            }
+        });
+
+        final Button fafsaButton = findViewById(R.id.fafsaButton);
+        fafsaButton.setOnClickListener (new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {Intent intent = new Intent();
+                intent.setAction(Intent.ACTION_VIEW);
+                intent.addCategory(Intent.CATEGORY_BROWSABLE);
+                intent.setData(Uri.parse("https://fafsa.ed.gov/ "));
+                startActivity(intent);
+            }
+        });
+
+        final Button scholorshipButton = findViewById(R.id.scholorshipButton);
+        scholorshipButton.setOnClickListener (new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {Intent intent = new Intent();
+                intent.setAction(Intent.ACTION_VIEW);
+                intent.addCategory(Intent.CATEGORY_BROWSABLE);
+                intent.setData(Uri.parse("https://www.scholarships.com/"));
+                startActivity(intent);
             }
         });
     }

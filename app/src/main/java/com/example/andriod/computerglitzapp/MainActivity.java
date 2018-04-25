@@ -63,9 +63,6 @@ public class MainActivity extends AppCompatActivity {
         mTextMessage = findViewById(R.id.message);
         BottomNavigationView navigation = findViewById(R.id.navigation);
         navigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
-//        Menu a = navigation.getMenu();
-//        MenuItem b = a.findItem(R.id.navigation_search);
-//        b.setIcon(R.drawable.glass);
 
         GridView gridview = findViewById(R.id.gridview);
         gridview.setAdapter(new ImageAdapter(this));
@@ -73,8 +70,6 @@ public class MainActivity extends AppCompatActivity {
         gridview.setOnItemClickListener(new OnItemClickListener() {
             public void onItemClick(AdapterView<?> parent, View v,
                                     int position, long id) {
-                // Toast.makeText(MainActivity.this, "" + position,
-                //  Toast.LENGTH_SHORT).show();
                 if(position == 0) {
                     startActivity(new Intent(MainActivity.this, Checklist.class));
                 }
@@ -102,18 +97,9 @@ public class MainActivity extends AppCompatActivity {
                 FavoritesDataHolder favoritesDataHolder = FavoritesDataHolder.getInstance();
                 favoritesDataHolder.setCollegeData(new ArrayList<MNCollege>());
 
-            BroadcastReceiver br = new AlarmReciver();
-            IntentFilter filter = new IntentFilter(ConnectivityManager.CONNECTIVITY_ACTION);
-            filter.addAction(Intent.ACTION_AIRPLANE_MODE_CHANGED);
-            this.registerReceiver(br, filter);
-//        }
+//            BroadcastReceiver br = new AlarmReciver();
+//            IntentFilter filter = new IntentFilter(ConnectivityManager.CONNECTIVITY_ACTION);
+//            filter.addAction(Intent.ACTION_AIRPLANE_MODE_CHANGED);
+//            this.registerReceiver(br, filter);
     }
 }
-
-/*recomaendeation pathway
-trending jobs
-online quizes
-intrest quizes
-fafsa/ financal
-about
-*/

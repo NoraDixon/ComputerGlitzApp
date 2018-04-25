@@ -48,6 +48,14 @@
         <activity
             android:name=".Skills"
             android:label="Hands On"></activity>
+
+        <receiver android:name=".AlarmReciver">
+            <intent-filter>
+                <action android:name="Action"></action>
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </receiver>
+
     </application>
 
 </manifest>
