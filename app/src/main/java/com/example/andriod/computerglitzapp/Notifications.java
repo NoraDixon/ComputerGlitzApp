@@ -61,6 +61,7 @@ public class Notifications extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_notifications);
+        final MNCollege mnCollege = (MNCollege)getIntent().getSerializableExtra("CollegeSelected");
 
         final LinearLayout mLayout = (LinearLayout) findViewById(R.id.layout);
        // final EditText mEditText = (EditText) findViewById(R.id.bodyText);
@@ -116,8 +117,9 @@ public class Notifications extends AppCompatActivity {
                 PendingIntent pendingIntent = PendingIntent.getBroadcast(getApplicationContext(), 0, intent, 0);
                 long timeToPassIn = calendar.getTimeInMillis();
                 alarmManager.set(AlarmManager.RTC_WAKEUP, timeToPassIn, pendingIntent);
-               startActivity(new Intent(Notifications.this, CollegeListActivity.class));
-               //put the thing i n to pass the values in yay
+                final Intent collegeView = new Intent(Notifications.this, SchoolInfo.class);
+                collegeView.putExtra("CollegeSelected", mnCollege);
+                startActivity(collegeView);
 
             }
         });

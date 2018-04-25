@@ -108,7 +108,9 @@ public class SchoolInfo extends AppCompatActivity {
         calendarButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(SchoolInfo.this, Notifications.class));
+                Intent intent = new Intent(SchoolInfo.this, Notifications.class);
+                intent.putExtra("CollegeSelected", mnCollege);
+                startActivity(intent);
             }
         });
 
