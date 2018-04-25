@@ -110,7 +110,7 @@ public class FinancailInfo extends AppCompatActivity {
         });
 
         final EditText financailInfo = (EditText) findViewById(R.id.finacalText);
-        saveFinancial.setText(retriveByID(mnCollege.getUnitid() + "Notes"));
+        financailInfo.setText(retriveByID("financailNotes"));
         financailInfo.addTextChangedListener(new TextWatcher() {
             @Override
             public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
@@ -135,6 +135,10 @@ public class FinancailInfo extends AppCompatActivity {
         SharedPreferences.Editor editor = sharedPreferences.edit();
         editor.putString("financailNotes", notes);
         editor.apply();
+    }
+    public String retriveByID (String id){
+        SharedPreferences sharedPreferences = getSharedPreferences(AppVaribles.sharedPrefrencesFile, Context.MODE_PRIVATE);
+        return sharedPreferences.getString(id, "");
     }
     }
 
