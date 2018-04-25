@@ -115,7 +115,9 @@ public class Notifications extends AppCompatActivity {
                 AlarmManager alarmManager = (AlarmManager) getSystemService(Context.ALARM_SERVICE);
                 PendingIntent pendingIntent = PendingIntent.getBroadcast(getApplicationContext(), 0, intent, 0);
                 alarmManager.set(AlarmManager.RTC_WAKEUP, calendar.getTimeInMillis(), pendingIntent);
-                startActivity(new Intent(Notifications.this, MainActivity.class));
+               startActivity(new Intent(Notifications.this, CollegeListActivity.class));
+               //put the thing i n to pass the values in yay
+
             }
         });
 
