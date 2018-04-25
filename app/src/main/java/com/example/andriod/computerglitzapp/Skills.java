@@ -50,11 +50,11 @@ public class Skills extends AppCompatActivity {
 //        mRecycler = (RecyclerView) findViewById(R.id.reclycler);
 //        mAdapter = new SkillsAdapter();
 //        mRecycler.setAdapter(mAdapter);
-//        BottomNavigationView navigation = findViewById(R.id.navigation);
-//        navigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
-//        Menu a = navigation.getMenu();
-//        MenuItem b = a.findItem(R.id.navigation_home);
-//        b.setChecked(true);
+        BottomNavigationView navigation = findViewById(R.id.navigation);
+        navigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
+        Menu a = navigation.getMenu();
+        MenuItem b = a.findItem(R.id.navigation_home);
+        b.setChecked(true);
 
 //        final MNCollege mnCollege = (MNCollege)getIntent().getSerializableExtra("CollegeSelected");
 //        final Button websiteButton = (Button) findViewById(R.id.view_holder_button);
