@@ -12,6 +12,7 @@ import android.support.v7.widget.RecyclerView;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import java.util.ArrayList;
@@ -86,6 +87,12 @@ public class Favorites extends AppCompatActivity {
 
         }));
         mAdapter.notifyDataSetChanged();
+
+        ImageView noFavorites = (ImageView) findViewById(R.id.noFavorite);
+        if(favortiedColleges.isEmpty()){
+            noFavorites.setVisibility(View.VISIBLE);
+
+        }
 
     }
 
