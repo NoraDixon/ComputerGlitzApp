@@ -142,5 +142,6 @@ public class FinancailInfo extends AppCompatActivity {
         return sharedPreferences.getString(id, "");
     }
     }
+    //get the latest
 
 
