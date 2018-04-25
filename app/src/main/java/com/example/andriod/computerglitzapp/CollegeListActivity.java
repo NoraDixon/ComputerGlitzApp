@@ -15,6 +15,7 @@ import android.view.View;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import java.util.ArrayList;
@@ -58,6 +59,8 @@ public class CollegeListActivity extends AppCompatActivity
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+
+        ImageView noResults = (ImageView) findViewById(R.id.noResults);
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_college_list);
 
@@ -101,13 +104,21 @@ public class CollegeListActivity extends AppCompatActivity
         clearButton.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View view){
+                ImageView noResults = (ImageView) findViewById(R.id.noResults);
+
+                noResults.setVisibility(View.GONE);
                 MNCollegeDataHolder.getInstance().resetFilteredCollegeData();
                 mAdapter.notifyDataSetChanged();
                 editText.setText("");
             }
         });
+
     }
+
     private void searchCollegeList(EditText editText, View view){
+        ImageView noResults = (ImageView) findViewById(R.id.noResults);
+
+        noResults.setVisibility(View.GONE);
         String searchText = editText.getText().toString().toLowerCase();
         List<MNCollege> foundCollege = new ArrayList<>();
         for (MNCollege mnCollege:MNCollegeDataHolder.getInstance().getCollegeData()
@@ -121,6 +132,9 @@ public class CollegeListActivity extends AppCompatActivity
         editText.clearFocus();
         InputMethodManager imm = (InputMethodManager)getSystemService(Context.INPUT_METHOD_SERVICE);
         imm.hideSoftInputFromWindow(view.getWindowToken(), 0);
+        if(foundCollege.isEmpty()){
+            noResults.setVisibility(View.VISIBLE);
+        }
     }
 
 }
