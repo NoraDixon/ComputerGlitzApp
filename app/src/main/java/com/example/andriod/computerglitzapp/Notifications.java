@@ -101,7 +101,7 @@ public class Notifications extends AppCompatActivity {
                 int minute = mTimePicker.getMinute();
 
                 int day = mDatePicker.getDayOfMonth();
-                int month = mDatePicker.getMonth() + 1;
+                int month = mDatePicker.getMonth();
                 int year = mDatePicker.getYear();
 
                 Calendar calendar = Calendar.getInstance();
@@ -109,12 +109,13 @@ public class Notifications extends AppCompatActivity {
 
                 long test = calendar.getTimeInMillis();
                 Intent intent = new Intent("Action", Uri.parse(mEditText.getText().toString()),getApplicationContext(), AlarmReciver.class); //set title and text
-                //intent.putExtra("text", mEditText.getText()); //this
-                intent.putExtra("text", "Text"); //this
+                intent.putExtra("text", mEditText.getText().toString()); //this
+                //intent.putExtra("text", "Text"); //this
 
                 AlarmManager alarmManager = (AlarmManager) getSystemService(Context.ALARM_SERVICE);
                 PendingIntent pendingIntent = PendingIntent.getBroadcast(getApplicationContext(), 0, intent, 0);
-                alarmManager.set(AlarmManager.RTC_WAKEUP, calendar.getTimeInMillis(), pendingIntent);
+                long timeToPassIn = calendar.getTimeInMillis();
+                alarmManager.set(AlarmManager.RTC_WAKEUP, timeToPassIn, pendingIntent);
                startActivity(new Intent(Notifications.this, CollegeListActivity.class));
                //put the thing i n to pass the values in yay
 

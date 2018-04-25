@@ -1,21 +1,21 @@
 package com.example.andriod.computerglitzapp;
 
 
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.design.widget.BottomNavigationView;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.RecyclerView;
-import android.view.Menu;
+import android.text.Editable;
+import android.text.TextWatcher;
 import android.view.MenuItem;
 import android.view.View;
-import android.view.Window;
-import android.widget.AdapterView;
 import android.widget.Button;
-import android.widget.ImageButton;
-import android.widget.TextView;
+import android.widget.EditText;
 
 public class FinancailInfo extends AppCompatActivity {
 
@@ -74,9 +74,10 @@ public class FinancailInfo extends AppCompatActivity {
 //        });\
 
         final Button thingsButton = findViewById(R.id.thingsButton);
-        thingsButton.setOnClickListener (new View.OnClickListener() {
+        thingsButton.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View view) {Intent intent = new Intent();
+            public void onClick(View view) {
+                Intent intent = new Intent();
                 intent.setAction(Intent.ACTION_VIEW);
                 intent.addCategory(Intent.CATEGORY_BROWSABLE);
                 intent.setData(Uri.parse("https://blog.ed.gov/2017/09/12-common-fafsa-mistakes-2/"));
@@ -85,9 +86,10 @@ public class FinancailInfo extends AppCompatActivity {
         });
 
         final Button fafsaButton = findViewById(R.id.fafsaButton);
-        fafsaButton.setOnClickListener (new View.OnClickListener() {
+        fafsaButton.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View view) {Intent intent = new Intent();
+            public void onClick(View view) {
+                Intent intent = new Intent();
                 intent.setAction(Intent.ACTION_VIEW);
                 intent.addCategory(Intent.CATEGORY_BROWSABLE);
                 intent.setData(Uri.parse("https://fafsa.ed.gov/ "));
@@ -96,15 +98,44 @@ public class FinancailInfo extends AppCompatActivity {
         });
 
         final Button scholorshipButton = findViewById(R.id.scholorshipButton);
-        scholorshipButton.setOnClickListener (new View.OnClickListener() {
+        scholorshipButton.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View view) {Intent intent = new Intent();
+            public void onClick(View view) {
+                Intent intent = new Intent();
                 intent.setAction(Intent.ACTION_VIEW);
                 intent.addCategory(Intent.CATEGORY_BROWSABLE);
                 intent.setData(Uri.parse("https://www.scholarships.com/"));
                 startActivity(intent);
             }
         });
+
+        final EditText financailInfo = (EditText) findViewById(R.id.finacalText);
+        saveFinancial.setText(retriveByID(mnCollege.getUnitid() + "Notes"));
+        financailInfo.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+
+            }
+
+            @Override
+            public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+
+            }
+
+            @Override
+            public void afterTextChanged(Editable editable) {
+                saveFinancial(editable.toString());
+            }
+        });
     }
 
-}
+    private void saveFinancial (String notes){
+
+        SharedPreferences sharedPreferences = getSharedPreferences(AppVaribles.sharedPrefrencesFile, Context.MODE_PRIVATE);
+        SharedPreferences.Editor editor = sharedPreferences.edit();
+        editor.putString("financailNotes", notes);
+        editor.apply();
+    }
+    }
+
+
