@@ -58,18 +58,8 @@ public class Checklist extends AppCompatActivity implements ChecklistAdapter.MyV
         b.setChecked(true);
     }
 
-}
 
-    @Override
-    public void OnCheckBoxClick(ChecklistItem item, boolean Checked) {
-        item.setmIsChecked(checked);
-        SharedPreferences sharedPreferences = getSharedPreferences(AppVaribles.sharedPrefrencesFile, Context.MODE_PRIVATE );
-        SharedPreferences.Editor editor = sharedPreferences.edit();
-        editor.putBoolean(item.getKey(), item.ismIsChecked());
-        editor.apply();
-    }
 
-    @Override
     private void getCheckItemData() {
         SharedPreferences sharedPreferences = getSharedPreferences(AppVaribles.sharedPrefrencesFile, Context.MODE_PRIVATE);
         for (ChecklistItem item : ChecklistData.mChecklist
@@ -78,4 +68,13 @@ public class Checklist extends AppCompatActivity implements ChecklistAdapter.MyV
             item.setmIsChecked(isChecked);
             }
         }
+
+    @Override
+    public void onCheckBoxClick(ChecklistItem item, boolean checked) {
+        item.setmIsChecked(checked);
+        SharedPreferences sharedPreferences = getSharedPreferences(AppVaribles.sharedPrefrencesFile, Context.MODE_PRIVATE );
+        SharedPreferences.Editor editor = sharedPreferences.edit();
+        editor.putBoolean(item.getKey(), item.ismIsChecked());
+        editor.apply();
     }
+}
