@@ -8,8 +8,10 @@ public class ChecklistItem {
     private int mIndent;
     private String mText;
     private boolean mIsChecked;
+    private String Key;
 
-    public ChecklistItem(int mIndent, String mText, boolean mIsChecked) {
+    public ChecklistItem(String Key, int mIndent, String mText, boolean mIsChecked) {
+        this.Key = Key;
         this.mIndent = mIndent;
         this.mText = mText;
         this.mIsChecked = mIsChecked;
@@ -38,4 +40,6 @@ public class ChecklistItem {
     public void setmIsChecked(boolean mIsChecked) {
         this.mIsChecked = mIsChecked;
     }
+
+    public String getKey() {return Key; }
 }

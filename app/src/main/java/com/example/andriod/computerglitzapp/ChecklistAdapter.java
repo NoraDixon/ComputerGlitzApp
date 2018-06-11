@@ -17,6 +17,7 @@ static class MyViewHolder extends RecyclerView.ViewHolder{
     private TextView mMytextview;
     private CheckBox mMainCheckbox;
     private CheckBox mCollapsableCheckbox;
+    private ChecklistItem item;
 
     private int mIndent;
     public MyViewHolder(View itemView) {
@@ -24,13 +25,20 @@ static class MyViewHolder extends RecyclerView.ViewHolder{
         mMytextview = itemView.findViewById(R.id.view_holder_textview);
         mCollapsableCheckbox = itemView.findViewById(R.id.view_holder_collapeser_checkbox);
         mIndent = (int) itemView.getContext().getResources().getDimension(R.dimen.activity_checklist_indent);
+
+    public interface ChecklistAdapterListener{
+        void onCheckboxClick(ChecklistItem item, boolean checked);
+    }
+
+    public MyViewHolder(View itemView, final ChecklistAdapterListener listener; )
+        super(itemView);
     }
 }
 
     @Override
     public MyViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         View root = LayoutInflater.from(parent.getContext()).inflate(R.layout.viewholder_checklist_item, parent, false);
-        return new MyViewHolder(root);
+        return new MyViewHolder(root, checklistAdapterListener);
     }
 
     @Override
@@ -42,6 +50,15 @@ holder.itemView.setPadding(holder.mIndent*item.getmIndent(),0,0,0);
 
     @Override
     public int getItemCount() {
-        return ChecklistData.mChecklist.size();
+    return ChecklistData.mChecklist.size();
     }
 }
+    private MyViewHolder.ChecklistAdapterListener checklistAdapterListener;
+
+    public ChecklistAdapter ( MyViewHolder.ChecklistAdapterListener checklistAdapterListener ){
+        this.checklistAdapterListener = checklistAdapterListener;
+    }
+
+    @Override
+
+
