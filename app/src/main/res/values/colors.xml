@@ -7,5 +7,7 @@
     <color name="black">#000000</color>
     <color name="white">#ffffff</color>
     <color name="home">#1d0e68</color>
+    <color name="logo">#3009ef</color>
+
 
 </resources>

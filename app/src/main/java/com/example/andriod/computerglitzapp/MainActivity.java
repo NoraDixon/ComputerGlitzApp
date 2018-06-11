@@ -13,6 +13,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.ExpandableListView;
 import android.widget.TextView;
 import android.widget.GridView;
 import android.widget.AdapterView;
@@ -21,12 +22,18 @@ import android.view.View;
 import android.widget.AdapterView.OnItemClickListener;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
 
     private TextView mTextMessage;
-
+//    //
+//    ExpandableListAdapter listAdapter;
+//    ExpandableListView expListView;
+//    List<String> listDataHeader;
+//    HashMap<String, List<String>> listDataChild;
+//    //
     private BottomNavigationView.OnNavigationItemSelectedListener mOnNavigationItemSelectedListener
             = new BottomNavigationView.OnNavigationItemSelectedListener() {
 
