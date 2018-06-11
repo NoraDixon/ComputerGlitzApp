@@ -6,6 +6,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.CheckBox;
+import android.widget.CompoundButton;
 import android.widget.TextView;
 
 /**
@@ -24,6 +25,12 @@ static class MyViewHolder extends RecyclerView.ViewHolder{
         super(itemView);
         mMytextview = itemView.findViewById(R.id.view_holder_textview);
         mCollapsableCheckbox = itemView.findViewById(R.id.view_holder_collapeser_checkbox);
+        mCollapsableCheckbox.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                listener.OnCheckBoxClick(item);
+            }
+        });
         mIndent = (int) itemView.getContext().getResources().getDimension(R.dimen.activity_checklist_indent);
 
     public interface ChecklistAdapterListener{
@@ -43,9 +50,11 @@ static class MyViewHolder extends RecyclerView.ViewHolder{
 
     @Override
     public void onBindViewHolder(MyViewHolder holder, int position) {
-ChecklistItem item = ChecklistData.mChecklist.get(position);
-holder.mMytextview.setText(item.getmText());
-holder.itemView.setPadding(holder.mIndent*item.getmIndent(),0,0,0);
+        ChecklistItem item = ChecklistData.mChecklist.get(position);
+        holder.item = item;
+        holder.mCollapsableCheckbox.setChecked(item.ismIsChecked());
+        holder.mMytextview.setText(item.getmText());
+        holder.itemView.setPadding(holder.mIndent*item.getmIndent(),0,0,0);
     }
 
     @Override
