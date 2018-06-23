@@ -7,6 +7,13 @@
     android:layout_height="match_parent"
     tools:context="com.example.andriod.computerglitzapp.CollegeListActivity">
 
+    <ImageView
+        android:id="@+id/noResults"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:srcCompat="@drawable/noresults"
+        android:visibility="gone"/>
+
     <android.support.v7.widget.RecyclerView
         android:id="@+id/reclycler"
         android:layout_width="480dp"

@@ -16,6 +16,7 @@ import android.view.inputmethod.InputMethodManager;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ExpandableListView;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 import java.util.ArrayList;
@@ -74,6 +75,8 @@ public class CollegeListActivity extends AppCompatActivity
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+
+        ImageView noResults = (ImageView) findViewById(R.id.noResults);
         super.onCreate(savedInstanceState);
 
         setContentView(R.layout.activity_college_list);
@@ -126,13 +129,21 @@ public class CollegeListActivity extends AppCompatActivity
         clearButton.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View view){
+                ImageView noResults = (ImageView) findViewById(R.id.noResults);
+
+                noResults.setVisibility(View.GONE);
                 MNCollegeDataHolder.getInstance().resetFilteredCollegeData();
                 mAdapter.notifyDataSetChanged();
                 editText.setText("");
             }
         });
+
     }
+
     private void searchCollegeList(EditText editText, View view){
+        ImageView noResults = (ImageView) findViewById(R.id.noResults);
+
+        noResults.setVisibility(View.GONE);
         String searchText = editText.getText().toString().toLowerCase();
         List<MNCollege> foundCollege = new ArrayList<>();
         for (MNCollege mnCollege:MNCollegeDataHolder.getInstance().getCollegeData()
@@ -169,90 +180,11 @@ public class CollegeListActivity extends AppCompatActivity
                                         int groupPosition, long id) {
                 // Toast.makeText(getApplicationContext(),
                 // "Group Clicked " + listDataHeader.get(groupPosition),
-                // Toast.LENGTH_SHORT).show();
+                //
+                expListView.getExpandableListAdapter();
                 return false;
             }
-            // TODO: 6/11/2018
-            // TODO: 6/11/2018
-            // TODO: 6/11/2018
-            // TODO: 6/11/2018
-            // TODO: 6/11/2018
-            // TODO: 6/11/2018  // TODO: 6/11/2018
-            // TODO: 6/11/2018
-            // TODO: 6/11/2018  // TODO: 6/11/2018
-            // TODO: 6/11/2018
-            // TODO: 6/11/2018  // TODO: 6/11/2018
-            // TODO: 6/11/2018
-            // TODO: 6/11/2018  // TODO: 6/11/2018
-            // TODO: 6/11/2018
-            // TODO: 6/11/2018  // TODO: 6/11/2018
-            // TODO: 6/11/2018
-            // TODO: 6/11/2018  // TODO: 6/11/2018
-            // TODO: 6/11/2018
-            // TODO: 6/11/2018  // TODO: 6/11/2018
-            // TODO: 6/11/2018
-            // TODO: 6/11/2018  // TODO: 6/11/2018
-            // TODO: 6/11/2018
-            // TODO: 6/11/2018  // TODO: 6/11/2018
-            // TODO: 6/11/2018
-            // TODO: 6/11/2018  // TODO: 6/11/2018
-            // TODO: 6/11/2018
-            // TODO: 6/11/2018  // TODO: 6/11/2018
-            // TODO: 6/11/2018
-            // TODO: 6/11/2018  // TODO: 6/11/2018
-            // TODO: 6/11/2018
-            // TODO: 6/11/2018  // TODO: 6/11/2018
-            // TODO: 6/11/2018
-            // TODO: 6/11/2018  // TODO: 6/11/2018
-            // TODO: 6/11/2018
-            // TODO: 6/11/2018  // TODO: 6/11/2018
-            // TODO: 6/11/2018
-            // TODO: 6/11/2018  // TODO: 6/11/2018// TODO: 6/11/2018
-            // TODO: 6/11/2018
-            // TODO: 6/11/2018
-            // TODO: 6/11/2018
-            // TODO: 6/11/2018  // TODO: 6/11/2018
-            // TODO: 6/11/2018
-            // TODO: 6/11/2018  // TODO: 6/11/2018
-            // TODO: 6/11/2018
-            // TODO: 6/11/2018  // TODO: 6/11/2018
-            // TODO: 6/11/2018
-            // TODO: 6/11/2018  // TODO: 6/11/2018
-            // TODO: 6/11/2018
-            // TODO: 6/11/2018  // TODO: 6/11/2018
-            // TODO: 6/11/2018
-            // TODO: 6/11/2018  // TODO: 6/11/2018
-            // TODO: 6/11/2018
-            // TODO: 6/11/2018  // TODO: 6/11/2018
-            // TODO: 6/11/2018
-            // TODO: 6/11/2018  // TODO: 6/11/2018
-            // TODO: 6/11/2018
-            // TODO: 6/11/2018
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+            // TODO: 6/11/2016
         });
 
         // Listview Group expanded listener
@@ -284,7 +216,7 @@ public class CollegeListActivity extends AppCompatActivity
             @Override
             public boolean onChildClick(ExpandableListView parent, View v,
                                         int groupPosition, int childPosition, long id) {
-                // TODO Auto-generated method stub
+
                 Toast.makeText(
                         getApplicationContext(),
                         listDataHeader.get(groupPosition)
@@ -296,7 +228,19 @@ public class CollegeListActivity extends AppCompatActivity
                 return false;
             }
         });
+
+        if(foundCollege.isEmpty()){
+            noResults.setVisibility(View.VISIBLE);
+        }
+        expListView.setOnClickListener (new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                expListView.expandGroup(50);
+            }
+        });
+
     }
+
 
     /*
      * Preparing the list data
@@ -311,9 +255,9 @@ public class CollegeListActivity extends AppCompatActivity
         // Adding child data
         List<String> Programs = new ArrayList<String>();
         Programs.add("Radio Host");
+        Programs.add("Radio Host");
+        Programs.add("Radio Host");
+        Programs.add("Radio Host");
 
     }
 }
-        //
-
-
