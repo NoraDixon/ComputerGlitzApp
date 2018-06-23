@@ -5,6 +5,7 @@
     android:id="@+id/container"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/white"
     tools:context="com.example.andriod.computerglitzapp.CollegeListActivity">
 
     <ImageView
@@ -16,14 +17,17 @@
 
     <android.support.v7.widget.RecyclerView
         android:id="@+id/reclycler"
-        android:layout_width="480dp"
-        android:layout_height="412dp"
-        android:layout_marginLeft="@dimen/activity_horizontal_margin"
-        android:layout_marginTop="8dp"
+        android:layout_width="393dp"
+        android:layout_height="549dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
         android:orientation="vertical"
         app:layoutManager="android.support.v7.widget.LinearLayoutManager"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editSearch" />
+        app:layout_constraintBottom_toTopOf="@+id/navigation"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/button" />
 
     <android.support.design.widget.BottomNavigationView
         android:id="@+id/navigation"
@@ -47,7 +51,7 @@
         android:inputType="textPersonName"
         android:text=""
         app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"/>
 
     <Button
         android:id="@+id/button"
@@ -71,16 +75,7 @@
         app:layout_constraintStart_toEndOf="@+id/editSearch"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <ExpandableListView
-        android:layout_width="398dp"
-        android:layout_height="59dp"
-        tools:layout_editor_absoluteX="13dp"
-        tools:layout_editor_absoluteY="487dp"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toLeftOf="parent"
-        app:layout_constraintBottom_toTopOf="@id/navigation"
-        android:id="@+id/PeanutButter"
-        android:cacheColorHint="@color/black"
-        android:backgroundTint="@color/white" />
 
 </android.support.constraint.ConstraintLayout>
+
+

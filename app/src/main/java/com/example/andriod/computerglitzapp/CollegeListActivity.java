@@ -21,6 +21,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.HashSet;
 import java.util.List;
 import android.widget.ExpandableListView.OnChildClickListener;
 import android.widget.ExpandableListView.OnGroupClickListener;
@@ -31,6 +32,7 @@ import android.widget.ExpandableListView.OnGroupExpandListener;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
+import java.util.Set;
 
 /**
  * Created by Ashley on 4/20/2018.
@@ -81,14 +83,6 @@ public class CollegeListActivity extends AppCompatActivity
 
         setContentView(R.layout.activity_college_list);
 
-        // get the listview
-        expListView = (ExpandableListView) findViewById(R.id.PeanutButter);
-        // preparing list data
-        prepareListData();
-        listAdapter = new ExpandableListAdapter(this, listDataHeader, listDataChild);
-        // setting list adapter
-        expListView.setAdapter(listAdapter);
-
         MNCollegeDataHolder.getInstance().resetFilteredCollegeData();
         final Intent collegeView = new Intent(CollegeListActivity.this, SchoolInfo.class); //this
         mRecycler = (RecyclerView) findViewById(R.id.reclycler);
@@ -114,7 +108,10 @@ public class CollegeListActivity extends AppCompatActivity
             @Override
             public boolean onEditorAction(TextView textView, int i, KeyEvent keyEvent) {
                 if(keyEvent.getKeyCode()==KeyEvent.KEYCODE_ENTER){
-            searchCollegeList(editText,textView);
+                    Set<MNCollege> foundCollege = new HashSet<>();
+            searchCollegeList(editText,foundCollege);
+            searchProgramList(editText,foundCollege);
+            filterList(foundCollege,editText,textView);
                 }
                 return false;
             }
@@ -122,7 +119,10 @@ public class CollegeListActivity extends AppCompatActivity
         searchButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                searchCollegeList(editText, view);
+                Set<MNCollege> foundCollege = new HashSet<>();
+                searchCollegeList(editText, foundCollege);
+                searchProgramList(editText,foundCollege);
+                filterList(foundCollege,editText,view);
 
             }
         });
@@ -140,124 +140,42 @@ public class CollegeListActivity extends AppCompatActivity
 
     }
 
-    private void searchCollegeList(EditText editText, View view){
+    private void searchProgramList(EditText editText, Set<MNCollege> foundCollege){
         ImageView noResults = (ImageView) findViewById(R.id.noResults);
 
         noResults.setVisibility(View.GONE);
         String searchText = editText.getText().toString().toLowerCase();
-        List<MNCollege> foundCollege = new ArrayList<>();
+        for (MNCollege mnCollege:MNCollegeDataHolder.getInstance().getCollegeData()
+                ) {
+            for (String program:mnCollege.getProgramList()){
+            if (program.toLowerCase().contains(searchText)){
+                foundCollege.add(mnCollege);
+            }
+        }}
+    }
+
+
+    private void searchCollegeList(EditText editText, Set<MNCollege> foundCollege){
+        ImageView noResults = (ImageView) findViewById(R.id.noResults);
+
+        noResults.setVisibility(View.GONE);
+        String searchText = editText.getText().toString().toLowerCase();
         for (MNCollege mnCollege:MNCollegeDataHolder.getInstance().getCollegeData()
                 ) {
             if (mnCollege.getName().toLowerCase().contains(searchText)){
                 foundCollege.add(mnCollege);
             }
         }
-        MNCollegeDataHolder.getInstance().setFilteredCollegeData(foundCollege);
+
+    }
+
+    private void filterList (Set<MNCollege> foundCollege, EditText editText, View view){
+        List<MNCollege> list = new ArrayList<MNCollege>(foundCollege);
+        MNCollegeDataHolder.getInstance().setFilteredCollegeData(list);
         mAdapter.notifyDataSetChanged();
         editText.clearFocus();
         InputMethodManager imm = (InputMethodManager)getSystemService(Context.INPUT_METHOD_SERVICE);
         imm.hideSoftInputFromWindow(view.getWindowToken(), 0);
-
-//super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
-
-        // get the listview
-        expListView = (ExpandableListView) findViewById(R.id.PeanutButter);
-
-        // preparing list data
-        prepareListData();
-
-        listAdapter = new ExpandableListAdapter(this, listDataHeader, listDataChild);
-
-        // setting list adapter
-        expListView.setAdapter(listAdapter);
-
-        // Listview Group click listener
-        expListView.setOnGroupClickListener(new OnGroupClickListener() {
-
-            @Override
-            public boolean onGroupClick(ExpandableListView parent, View v,
-                                        int groupPosition, long id) {
-                // Toast.makeText(getApplicationContext(),
-                // "Group Clicked " + listDataHeader.get(groupPosition),
-                //
-                expListView.getExpandableListAdapter();
-                return false;
-            }
-            // TODO: 6/11/2016
-        });
-
-        // Listview Group expanded listener
-        expListView.setOnGroupExpandListener(new OnGroupExpandListener() {
-
-            @Override
-            public void onGroupExpand(int groupPosition) {
-                Toast.makeText(getApplicationContext(),
-                        listDataHeader.get(groupPosition) + " Expanded",
-                        Toast.LENGTH_SHORT).show();
-            }
-        });
-
-        // Listview Group collasped listener
-        expListView.setOnGroupCollapseListener(new OnGroupCollapseListener() {
-
-            @Override
-            public void onGroupCollapse(int groupPosition) {
-                Toast.makeText(getApplicationContext(),
-                        listDataHeader.get(groupPosition) + " Collapsed",
-                        Toast.LENGTH_SHORT).show();
-
-            }
-        });
-
-        // Listview on child click listener
-        expListView.setOnChildClickListener(new OnChildClickListener() {
-
-            @Override
-            public boolean onChildClick(ExpandableListView parent, View v,
-                                        int groupPosition, int childPosition, long id) {
-
-                Toast.makeText(
-                        getApplicationContext(),
-                        listDataHeader.get(groupPosition)
-                                + " : "
-                                + listDataChild.get(
-                                listDataHeader.get(groupPosition)).get(
-                                childPosition), Toast.LENGTH_SHORT)
-                        .show();
-                return false;
-            }
-        });
-
-        if(foundCollege.isEmpty()){
-            noResults.setVisibility(View.VISIBLE);
-        }
-        expListView.setOnClickListener (new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                expListView.expandGroup(50);
-            }
-        });
-
-    }
-
-
-    /*
-     * Preparing the list data
-     */
-    private void prepareListData() {
-        listDataHeader = new ArrayList<String>();
-        listDataChild = new HashMap<String, List<String>>();
-
-        // Adding child data
-        listDataHeader.add("Search By Programs");
-
-        // Adding child data
-        List<String> Programs = new ArrayList<String>();
-        Programs.add("Radio Host");
-        Programs.add("Radio Host");
-        Programs.add("Radio Host");
-        Programs.add("Radio Host");
 
     }
 }
