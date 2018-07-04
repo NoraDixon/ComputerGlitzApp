@@ -7,12 +7,14 @@ package com.example.andriod.computerglitzapp;
 public class IndividualChecklistItem {
     private int mIndent;
     private String mText;
+    private String mKey;
     private boolean mIsChecked;
     private int mId;
 
-    public IndividualChecklistItem(int mIndent, String mText, boolean mIsChecked, int mId) {
+    public IndividualChecklistItem(String mKey, int mIndent, String mText, boolean mIsChecked, int mId) {
         this.mIndent = mIndent;
         this.mText = mText;
+        this.mKey = mKey;
         this.mIsChecked = mIsChecked;
         this.mId = mId;
     }
@@ -28,6 +30,8 @@ public class IndividualChecklistItem {
     public String getmText() {
         return mText;
     }
+
+    public String getKey() { return mKey; }
 
     public void setmText(String mText) {
         this.mText = mText;

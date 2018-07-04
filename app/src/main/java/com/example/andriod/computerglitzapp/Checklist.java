@@ -56,6 +56,7 @@ public class Checklist extends AppCompatActivity implements ChecklistAdapter.MyV
         Menu a = navigation.getMenu();
         MenuItem b = a.findItem(R.id.navigation_checkmark);
         b.setChecked(true);
+
     }
 
 
