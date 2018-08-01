@@ -10,7 +10,7 @@ import android.support.v7.widget.RecyclerView;
 import android.view.Menu;
 import android.view.MenuItem;
 
-public class IndividsualChecklist extends AppCompatActivity implements IndividualChecklistAdapter.MyViewHolder.IndividualChecklistAdapterListener{
+public class IndividsualChecklist extends AppCompatActivity {
 
     private RecyclerView mRecycler;
     private IndividualChecklistAdapter mAdapter;
@@ -43,12 +43,11 @@ public class IndividsualChecklist extends AppCompatActivity implements Individua
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        getCheckItemData();
         setContentView(R.layout.activity_individual_checklist);
         final MNCollege mnCollege = (MNCollege)getIntent().getSerializableExtra("CollegeSelected");
 
         mRecycler = (RecyclerView) findViewById(R.id.reclycler);
-        mAdapter = new IndividualChecklistAdapter(this);
+        mAdapter = new IndividualChecklistAdapter();
         mRecycler.setAdapter(mAdapter);
         BottomNavigationView navigation = findViewById(R.id.navigation);
         navigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);

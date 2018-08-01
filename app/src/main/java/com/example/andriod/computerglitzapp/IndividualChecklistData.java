@@ -8,7 +8,7 @@ import java.util.ArrayList;
 
 public class IndividualChecklistData {
     public static ArrayList<IndividualChecklistItem> mIndividualChecklist = new ArrayList<>();
-    static {
+     {
         mIndividualChecklist.add(new IndividualChecklistItem("ck0",0, "Are you interested in transferring to a four-year college later?", false, 0));
         mIndividualChecklist.add(new IndividualChecklistItem("ck1",1, "Check for an 'articualtion agreement' betwwen the schools", false, 1));
         mIndividualChecklist.add(new IndividualChecklistItem("ck3",0, "Check out campus media platforms", false, 2));
