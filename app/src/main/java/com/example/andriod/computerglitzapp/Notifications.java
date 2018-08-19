@@ -1,13 +1,16 @@
 package com.example.andriod.computerglitzapp;
 
+import android.app.ActionBar;
 import android.app.AlarmManager;
 import android.app.DialogFragment;
 import android.app.PendingIntent;
 import android.content.Context;
 import android.content.Intent;
 import android.net.Uri;
+import android.os.Build;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
+import android.support.annotation.RequiresApi;
 import android.support.design.widget.BottomNavigationView;
 import android.support.v7.app.AppCompatActivity;
 import android.view.MenuItem;
@@ -23,6 +26,7 @@ import android.widget.Toast;
 
 import com.opencsv.stream.reader.LineReader;
 
+import java.util.BitSet;
 import java.util.Calendar;
 
 import static android.widget.Toast.LENGTH_LONG;
@@ -93,12 +97,24 @@ public class Notifications extends AppCompatActivity {
                 mLayout.setVisibility(View.VISIBLE);
             }
         });
+        final Calendar c = Calendar.getInstance();
         mTextButton.setOnClickListener(new View.OnClickListener() {
+            @RequiresApi(api = Build.VERSION_CODES.M)
             @Override
             public void onClick(View view) {
                 EditText mEditText = (EditText) findViewById(R.id.bodyText);
-                int hour = mTimePicker.getHour();
+//                int hour = mTimePicker.getHour();
+//                int minute = mTimePicker.getMinute();
+                int hour = mTimePicker.getHour(); //get selected hour
                 int minute = mTimePicker.getMinute();
+                // TODO: 8/19/2018 This is the line that has the issues and I am confused
+                int hour_now = c.get(Calendar.HOUR); //get system's hour
+                int minute_now = c.get(Calendar.MINUTE); //get system's minute
+                int hour_result = hour - hour_now; //subtract the time selected by time.now of system
+                int minute_result = minute - minute_now;
+                String hour_result_string = String.valueOf(hour_result); //convert to string to display
+                String minute_result_string = String.valueOf(minute_result);
+
 
                 int day = mDatePicker.getDayOfMonth();
                 int month = mDatePicker.getMonth();
