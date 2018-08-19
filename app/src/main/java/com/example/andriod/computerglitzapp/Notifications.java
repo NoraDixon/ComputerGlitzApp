@@ -97,24 +97,15 @@ public class Notifications extends AppCompatActivity {
                 mLayout.setVisibility(View.VISIBLE);
             }
         });
-        final Calendar c = Calendar.getInstance();
+        
         mTextButton.setOnClickListener(new View.OnClickListener() {
             @RequiresApi(api = Build.VERSION_CODES.M)
             @Override
             public void onClick(View view) {
                 EditText mEditText = (EditText) findViewById(R.id.bodyText);
-//                int hour = mTimePicker.getHour();
-//                int minute = mTimePicker.getMinute();
-                int hour = mTimePicker.getHour(); //get selected hour
+                int hour = mTimePicker.getHour();
                 int minute = mTimePicker.getMinute();
-                // TODO: 8/19/2018 This is the line that has the issues and I am confused
-                int hour_now = c.get(Calendar.HOUR); //get system's hour
-                int minute_now = c.get(Calendar.MINUTE); //get system's minute
-                int hour_result = hour - hour_now; //subtract the time selected by time.now of system
-                int minute_result = minute - minute_now;
-                String hour_result_string = String.valueOf(hour_result); //convert to string to display
-                String minute_result_string = String.valueOf(minute_result);
-
+                // TODO: 8/19/2018 this line does not work 
 
                 int day = mDatePicker.getDayOfMonth();
                 int month = mDatePicker.getMonth();
