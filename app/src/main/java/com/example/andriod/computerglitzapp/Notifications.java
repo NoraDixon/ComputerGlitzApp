@@ -97,15 +97,16 @@ public class Notifications extends AppCompatActivity {
                 mLayout.setVisibility(View.VISIBLE);
             }
         });
-        
+
         mTextButton.setOnClickListener(new View.OnClickListener() {
             @RequiresApi(api = Build.VERSION_CODES.M)
             @Override
             public void onClick(View view) {
                 EditText mEditText = (EditText) findViewById(R.id.bodyText);
-                int hour = mTimePicker.getHour();
-                int minute = mTimePicker.getMinute();
-                // TODO: 8/19/2018 this line does not work 
+                int hour = mTimePicker.getCurrentHour();
+                
+                int minute = mTimePicker.getCurrentMinute();
+                // TODO: 8/19/2018 this line does not work
 
                 int day = mDatePicker.getDayOfMonth();
                 int month = mDatePicker.getMonth();
