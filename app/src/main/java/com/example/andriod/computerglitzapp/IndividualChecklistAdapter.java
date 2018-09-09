@@ -14,9 +14,9 @@ import android.widget.TextView;
 
 public class IndividualChecklistAdapter extends Adapter<IndividualChecklistAdapter.MyViewHolder> {
 static class MyViewHolder extends RecyclerView.ViewHolder{
-    private TextView mMytextview;
-    private CheckBox mMainCheckbox;
-    private CheckBox mCollapsableCheckbox;
+    public TextView mMytextview;
+    public CheckBox mMainCheckbox;
+    public CheckBox mCollapsableCheckbox;
 
     private int mIndent;
     public MyViewHolder(View itemView) {

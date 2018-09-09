@@ -12,10 +12,10 @@ import android.view.MenuItem;
 
 public class IndividsualChecklist extends AppCompatActivity {
 
-    private RecyclerView mRecycler;
+    public RecyclerView mRecycler;
     private IndividualChecklistAdapter mAdapter;
 
-    private BottomNavigationView.OnNavigationItemSelectedListener mOnNavigationItemSelectedListener
+    public BottomNavigationView.OnNavigationItemSelectedListener mOnNavigationItemSelectedListener
             = new BottomNavigationView.OnNavigationItemSelectedListener() {
 
         @Override
