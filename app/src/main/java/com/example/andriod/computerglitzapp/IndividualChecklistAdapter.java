@@ -17,8 +17,10 @@ static class MyViewHolder extends RecyclerView.ViewHolder{
     public TextView mMytextview;
     public CheckBox mMainCheckbox;
     public CheckBox mCollapsableCheckbox;
+    public CheckBox item;
 
     private int mIndent;
+
     public MyViewHolder(View itemView) {
         super(itemView);
         mMytextview = itemView.findViewById(R.id.view_holder_textview);

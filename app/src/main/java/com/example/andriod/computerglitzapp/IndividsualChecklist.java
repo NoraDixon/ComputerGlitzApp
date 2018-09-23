@@ -1,7 +1,8 @@
 package com.example.andriod.computerglitzapp;
 
-
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.design.widget.BottomNavigationView;
@@ -45,6 +46,7 @@ public class IndividsualChecklist extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_individual_checklist);
         final MNCollege mnCollege = (MNCollege)getIntent().getSerializableExtra("CollegeSelected");
+
 
         mRecycler = (RecyclerView) findViewById(R.id.reclycler);
         mAdapter = new IndividualChecklistAdapter();
