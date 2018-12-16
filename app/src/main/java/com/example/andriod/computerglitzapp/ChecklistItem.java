@@ -7,8 +7,8 @@ package com.example.andriod.computerglitzapp;
 public class ChecklistItem {
     private int mIndent;
     private String mText;
-    private boolean mIsChecked;
-    private String Key;
+    public boolean mIsChecked;
+    public String Key;
 
     public ChecklistItem(String Key, int mIndent, String mText, boolean mIsChecked) {
         this.Key = Key;
